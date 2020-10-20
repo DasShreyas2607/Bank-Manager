@@ -1,0 +1,7 @@
+pandas
+Pillow
+mysql-connector
+datetime
+ttkthemes
+tkcalendar
+matplotlib
