@@ -6,7 +6,6 @@ data1 = pd.read_csv("ProfileData.csv")
 data2 = pd.read_csv("TransactionsData.csv")
 
 
-
 running = 5
 while running:
     rootUser = input("Enter User with root privilages: ")
@@ -74,8 +73,8 @@ if "transactions" in failLst:
     )
     print("transactions table created!!")
 # XYAECS!G
-ch = input('Insert 1000 Profile and 999 000 Transaction mock ? Y: ')
-if ch.lower().strip() == 'y':
+ch = input("Insert 1000 Profile and 999 000 Transaction mock ? Y: ")
+if ch.lower().strip() == "y":
     print("Inserting values\nPlease wait")
 
     print("Inserting into <profile>")
@@ -88,8 +87,7 @@ if ch.lower().strip() == 'y':
             if not counter % 5000:
                 db.commit()
         except:
-            print('Skipped Already Existing')
-
+            print("Skipped Already Existing")
 
     print("Inserting into <transactions>")
     counter = 0
@@ -102,14 +100,18 @@ if ch.lower().strip() == 'y':
                 db.commit()
 
         except:
-            print('Skipped Already Existing')
+            print("Skipped Already Existing")
 try:
-    mycursor.execute(f"INSERT INTO profile(UName,DOB,Nationality,Password,City,Address,AcNo,AcType,Caste,MobileNo,Gender,Admin) VALUES('Admin','2000-01-01','IN','pass','Banglore','NIL','ADMIN','Staff','NIL','+091 123 456 7809','Male',1);")
+    mycursor.execute(
+        f"INSERT INTO profile(UName,DOB,Nationality,Password,City,Address,AcNo,AcType,Caste,MobileNo,Gender,Admin) VALUES('Admin','2000-01-01','IN','pass','Banglore','NIL','ADMIN','Staff','NIL','+091 123 456 7809','Male',1);"
+    )
 except:
-    print('Admin Already Inserted')
+    print("Admin Already Inserted")
 
-print('''
+print(
+    """
 AcNo (admin) : ADMIN
 Passwd : pass
-''')
+"""
+)
 db.commit()
