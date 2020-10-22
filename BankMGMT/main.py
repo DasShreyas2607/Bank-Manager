@@ -14,17 +14,20 @@ from Modules import Admin, Dasboard, ChangePsswd, Login, Pay, Transaction, ViewC
 #
 #
 #
+file = open(r"DB_DATA.txt", "r")
+dbData = file.readline().split(",")
 mydb = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    passwd="bambh0le",
-    database="BANKMGMT",
+    host=dbData[0],
+    user=dbData[1],
+    passwd=dbData[2],
+    database=dbData[3],
 )
-#
-#
-#
-#
+file.close()
 mycursor = mydb.cursor(buffered=True)
+#
+#
+#
+#
 
 
 class App(Frame):
@@ -133,6 +136,7 @@ class App(Frame):
             if key.widget.select() == self.notebook.tabs()[-1]:
                 self.master.quit()
                 self.master.destroy()
+                mydb.close()
         except:
             pass
 

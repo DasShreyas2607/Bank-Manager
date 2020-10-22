@@ -1,1 +1,1 @@
-localhost,root,bambh0le,BANKMGMT
+localhost,root,bambh0le,BANK

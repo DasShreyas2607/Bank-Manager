@@ -1,4 +1,3 @@
-pandas
 Pillow
 mysql-connector
 datetime

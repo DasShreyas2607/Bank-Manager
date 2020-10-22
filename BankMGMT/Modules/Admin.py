@@ -98,7 +98,7 @@ class admin(Frame):
 
         else:
             for key in self.labeldic.keys():
-                self.labeldic[key].delete(0, END)
+                self.labeldic[key].delete(0, "end")
                 self.update()
 
     def save(self):

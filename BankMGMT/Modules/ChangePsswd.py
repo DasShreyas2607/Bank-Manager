@@ -37,6 +37,7 @@ class change(Frame):
             self.labeldic["New Password"].get()
             and self.labeldic["New Password"].get()
             == self.labeldic["Confirm Password"].get()
+            and len(self.labeldic["New Password"].get()) < 245
         ):
             self.dbcommit()
         else:
