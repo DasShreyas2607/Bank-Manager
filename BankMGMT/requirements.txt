@@ -4,3 +4,4 @@ datetime
 ttkthemes
 tkcalendar
 matplotlib
+scipy
