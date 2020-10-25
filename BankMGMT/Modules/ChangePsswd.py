@@ -5,8 +5,12 @@ import threading
 
 
 class change(Frame):
-    def __init__(self, root, acno="test"):
+    def __init__(self, root, acno):
         super().__init__(root)
+        self.sync()
+        threading.Thread(target=self.syncTimer).start()
+
+    def SetupUI(self,root,acno):
         self.container = Frame(self)
         self.container.grid(row=0, column=0)
         self.grid_rowconfigure(0, weight=1)
@@ -50,22 +54,21 @@ class change(Frame):
         mydb.commit()
         self.pssdlb["text"] = "Password Updated ! Takes effect after restart"
 
+    def sync(self):
+        with open(r"DB_DATA.txt", "r") as file:
+            dbData = file.readline().split(",")
+        self.db = mysql.connector.connect(
+            host=dbData[0],
+            user=dbData[1],
+            passwd=dbData[2],
+            database=dbData[3],
+        )
+        self.cursor = self.db.cursor(buffered=True)
 
-#
-#
-#
-#
-file = open(r"DB_DATA.txt", "r")
-dbData = file.readline().split(",")
-mydb = mysql.connector.connect(
-    host=dbData[0],
-    user=dbData[1],
-    passwd=dbData[2],
-    database=dbData[3],
-)
-file.close()
-mycursor = mydb.cursor(buffered=True)
-#
-#
-#
-#
+    def syncTimer(self):
+        try:
+            while True and self.winfo_exists():
+                sleep(60)
+                self.sync()
+        except:
+            pass

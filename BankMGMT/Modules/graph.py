@@ -2,6 +2,8 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 from tkinter import Tk
 from tkinter.ttk import Frame
+from scipy.ndimage.filters import gaussian_filter1d as filt
+import numpy as np
 
 
 class Graph(Frame):
@@ -15,6 +17,8 @@ class Graph(Frame):
     def add_subplot(self, name, int_=111):
         self.subPlots[name] = self.figure.add_subplot(int_)
 
-    def plot(self, name, x, y):
-        self.subPlots[name].plot(x, y)
+    def plot(self, name, lst):
+        grph = [int(FR-TO) for TO,FR in lst]
+        ind = np.arange(len(lst))
+        self.subPlots[name].plot(ind, filt(grph[::-1],sigma=0.75),':',color='Brown')
         self.subPlots[name].axis("off")

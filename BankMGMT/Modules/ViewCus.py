@@ -15,7 +15,7 @@ class view(Frame):
         self.offset = 0
         #
         self.table = Treeview(self.container)
-        self.table["columns"] = ("To Account", "Amount", "Date", "Remarks")
+        self.table["columns"] = ("Account No", "Name", "DOB", "Gender",'Admin')
         self.table.column("#0", width=0, minwidth=0)
         for i in self.table["columns"]:
             self.table.heading(i, text=i)
@@ -54,7 +54,7 @@ class view(Frame):
         )
         mycursor = mydb.cursor(buffered=True)
         mycursor.execute(
-            f"SELECT Uname,DOB,Nationality,City,Address,AcNo,AcType,Caste,MobileNo,Gender FROM profile ORDER BY ID LIMIT 10 OFFSET {self.offset};"
+            f"SELECT AcNo,Uname,DOB,Gender,IF(Admin=1,'Yes','No') FROM profile ORDER BY ID LIMIT 10 OFFSET {self.offset};"
         )
         self.CustData = mycursor.fetchall()
         mydb.close()
@@ -64,7 +64,7 @@ class view(Frame):
     def syncTimer(self):
         try:
             while True and self.winfo_exists():
-                sleep(100)
+                sleep(40)
                 self.sync()
         except:
             pass

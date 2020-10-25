@@ -9,6 +9,8 @@ from datetime import *
 class admin(Frame):
     def __init__(self, root, acno=None):
         super().__init__(root)
+        self.sync()
+        threading.Thread(target=self.syncTimer).start()
         self.container = Frame(self)
         self.container.grid(row=0, column=0)
         self.grid_rowconfigure(0, weight=1)
@@ -80,11 +82,11 @@ class admin(Frame):
 
     def search(self, acno):
         threading.Thread(
-            mycursor.execute(
+            self.cursor.execute(
                 f"SELECT Uname,Nationality,Password,City,Address,AcType,Caste,MobileNo,Balance,DOB,Gender,Admin FROM profile WHERE AcNo = '{self.acnoen.get()}';"
             )
         ).start()
-        self.data = mycursor.fetchone()
+        self.data = self.cursor.fetchone()
         if self.data:
             index = 0
             for key in self.labeldic.keys():
@@ -104,35 +106,43 @@ class admin(Frame):
     def save(self):
         try:
             if not self.data:
-                mycursor.execute(
+                self.cursor.execute(
                     f"INSERT INTO profile(AcNo) VALUES('{self.acnoen.get()}');"
                 )
-                mydb.commit()
-        except AttributeError:
+                self.db.commit()
+        except:
             pass
 
         iter_ = 0
         for values in self.labeldic.values():
-            mycursor.execute(
+            self.cursor.execute(
                 f"UPDATE profile SET {self.labels[iter_]}='{values.get()}' WHERE Acno in ('{self.acnoen.get()}');"
             )
             iter_ += 1
-        mycursor.execute(
+        self.cursor.execute(
             f"UPDATE profile SET Gender ='{self.gender.get()}',Admin ='{self.isAdmin.get()}',DOB='{self.dob.get_date()}' WHERE Acno in ('{self.acnoen.get()}');"
         )
-        mydb.commit()
+        self.db.commit()
 
-    def animateIn(self):
-        for i in range(10, 4, -1):
-            self.place(relx=i / 10, x=10, rely=0.5, y=-15, anchor=CENTER)
-            self.after(2, self.update())
-        return self
+    def sync(self):
+        with open(r"DB_DATA.txt", "r") as file:
+            dbData = file.readline().split(",")
+        self.db = mysql.connector.connect(
+            host=dbData[0],
+            user=dbData[1],
+            passwd=dbData[2],
+            database=dbData[3],
+        )
+        self.cursor = self.db.cursor(buffered=True)
 
-    def animateOut(self, offset=0):
-        for i in range(10, 4 + offset):
-            self.place(relx=i / 10, x=10, rely=0.5, y=-15, anchor=CENTER)
-            self.after(2, self.update())
-        self.destroy()
+    def syncTimer(self):
+        try:
+            while True and self.winfo_exists():
+                sleep(60)
+                self.container.destroy()
+                self.sync()
+        except:
+            pass
 
 
 class user(admin):
@@ -143,23 +153,3 @@ class user(admin):
         self.labeldic["Password"]["show"] = "*"
         self.adminen.grid_forget()
         self.adminlb.grid_forget()
-
-
-#
-#
-#
-#
-file = open(r"DB_DATA.txt", "r")
-dbData = file.readline().split(",")
-mydb = mysql.connector.connect(
-    host=dbData[0],
-    user=dbData[1],
-    passwd=dbData[2],
-    database=dbData[3],
-)
-file.close()
-mycursor = mydb.cursor(buffered=True)
-#
-#
-#
-#

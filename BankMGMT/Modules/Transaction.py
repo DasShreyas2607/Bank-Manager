@@ -81,7 +81,7 @@ class transaction(Frame):
     def syncTimer(self):
         try:
             while True and self.winfo_exists():
-                sleep(100)
+                sleep(40)
                 self.sync()
                 self.sync2()
         except:

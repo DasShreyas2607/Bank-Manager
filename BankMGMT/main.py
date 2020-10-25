@@ -24,6 +24,8 @@ mydb = mysql.connector.connect(
 )
 file.close()
 mycursor = mydb.cursor(buffered=True)
+mycursor.execute("SET @@global.sql_mode= '';")
+mydb.commit()
 #
 #
 #

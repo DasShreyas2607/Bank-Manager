@@ -11,14 +11,18 @@ class pay(Frame):
         super().__init__(
             root,
         )
+        self.sync()
+        threading.Thread(target=self.syncTimer).start()
+        self.SetupUI(root, AcNo, bal)
+    def SetupUI(self,root, AcNo, bal):
         self.bal = bal
         self.container = Frame(self)
         self.container.grid(row=0, column=0)
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)
         self.AcNo = AcNo
-        mycursor.execute(f"SELECT Balance FROM profile WHERE AcNo = '{self.AcNo}';")
-        self.Balance = mycursor.fetchone()[0]
+        self.cursor.execute(f"SELECT Balance FROM profile WHERE AcNo = '{self.AcNo}';")
+        self.Balance = self.cursor.fetchone()[0]
         #
         #
         #
@@ -74,11 +78,11 @@ class pay(Frame):
         if name:
             self.NameEntry.config(state="normal")
             self.NameEntry.delete(0, "end")
-            mycursor.execute(f"SELECT Uname FROM profile WHERE AcNo = '{name}';")
-            toName = mycursor.fetchone()
+            self.cursor.execute(f"SELECT Uname FROM profile WHERE AcNo = '{name}';")
+            toName = self.cursor.fetchone()
             if toName:
                 self.NameEntry.insert("end", str(toName[0]))
-            (mycursor.fetchone())
+            (self.cursor.fetchone())
             self.NameEntry.config(state="readonly")
             self.update()
         return True
@@ -96,22 +100,25 @@ class pay(Frame):
         if self.payIsValidate(self.data):
             self.Balance = str(int(self.Balance) - int(self.AmntEntry.get()))
             threading.Thread(
-                target=mycursor.execute(
+                target=self.cursor.execute(
                     f"INSERT INTO transactions(FromAc,ToAc,Amount,DOT,Remarks) VALUES('{self.AcNo}','{self.data[0]}',{self.data[2]},'{datetime.now()}','{self.data[1]}');"
                 )
             )
             threading.Thread(
-                target=mycursor.execute(
+                target=self.cursor.execute(
                     f"UPDATE profile SET Balance = '{self.Balance}' WHERE AcNo = '{self.AcNo}';"
                 )
             )
             threading.Thread(
-                target=mycursor.execute(
+                target=self.cursor.execute(
                     f"UPDATE profile SET Balance = Balance + '{self.AmntEntry.get()}' WHERE AcNo = '{self.data[0]}';"
                 )
             )
-            mydb.commit()
-            self.sync()
+            self.db.commit()
+            self.cursor.execute(f"SELECT Balance FROM profile WHERE AcNo = '{self.AcNo}';")
+            self.balance = self.cursor.fetchone()
+
+            self.bal.set(self.balance[0])
             self.messageBox()
             for entry in [self.ToEntry, self.RemEntry, self.AmntEntry]:
                 entry.delete(0, "end")
@@ -145,37 +152,25 @@ class pay(Frame):
     def sync(self):
         with open(r"DB_DATA.txt", "r") as file:
             dbData = file.readline().split(",")
-        mydb1 = mysql.connector.connect(
+        self.db = mysql.connector.connect(
             host=dbData[0],
             user=dbData[1],
             passwd=dbData[2],
             database=dbData[3],
         )
-        mycursor1 = mydb1.cursor(buffered=True)
-        mycursor1.execute(f"SELECT Balance FROM profile WHERE AcNo = '{self.AcNo}';")
-        self.balance = mycursor1.fetchone()
-        mydb1.close()
-        self.bal.set(self.balance[0])
+        self.cursor = self.db.cursor(buffered=True)
+
+    def syncTimer(self):
+        try:
+            while True and self.winfo_exists():
+                sleep(60)
+                self.sync()
+        except:
+            pass
 
 
-#
-#
-#
-#
-file = open(r"DB_DATA.txt", "r")
-dbData = file.readline().split(",")
-mydb = mysql.connector.connect(
-    host=dbData[0],
-    user=dbData[1],
-    passwd=dbData[2],
-    database=dbData[3],
-)
-file.close()
-mycursor = mydb.cursor(buffered=True)
-#
-#
-#
-#
+
+
 if __name__ == "__main__":
     win = Tk()
     app = pay(win, "test")

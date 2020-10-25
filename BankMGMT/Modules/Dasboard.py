@@ -9,41 +9,24 @@ from PIL import Image, ImageTk
 from time import sleep
 import Modules.graph as graph
 
-#
-#
-#
-#
-file = open(r"DB_DATA.txt", "r")
-dbData = file.readline().split(",")
-mydb = mysql.connector.connect(
-    host=dbData[0],
-    user=dbData[1],
-    passwd=dbData[2],
-    database=dbData[3],
-)
-file.close()
-#
-#
-#
-#
-mycursor = mydb.cursor(buffered=True)
-
-
 class dasboard(Frame):
     def __init__(self, root, acno):
         super().__init__(root)
+        self.root = root
+        self.acno = acno
+        self.sync()
+        threading.Thread(target=self.syncTimer).start()
+
+    def setupUI(self, root, acno):
         self.AcNo = acno
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1)
-        self.setupUI()
-
-    def setupUI(self):
-        mycursor.execute(f"SELECT Balance FROM profile where AcNo = '{self.AcNo}';")
+        self.cursor.execute(f"SELECT Balance FROM profile where AcNo = '{self.AcNo}';")
 
         self.container = Frame(self, relief="ridge")
         self.container.grid(row=0, column=1, ipadx=10, ipady=2)
 
-        mycursor.execute(
+        self.cursor.execute(
             f"SELECT Uname,DOB,Nationality,City,Address,AcNo,AcType,Caste,MobileNo,Gender FROM profile WHERE AcNo = '{self.AcNo}';"
         )
         self.dasblabels = dict(
@@ -60,10 +43,9 @@ class dasboard(Frame):
                     "Mobile No",
                     "Gender",
                 ),
-                mycursor.fetchone(),
+                self.cursor.fetchone(),
             )
         )
-        mydb.close()
         self.sep = Separator(self.container, orient="vertical").grid(
             row=0, rowspan=999, column=2, sticky="ns", padx=10
         )
@@ -82,44 +64,34 @@ class dasboard(Frame):
                 self.clno += 3
             else:
                 self.iter += 1
-        self.sync()
+
+        self.cursor.execute(
+            f"SELECT IF(ToAc = '{self.acno}',Amount,0),IF(FromAc='{self.acno}',Amount,0) FROM transactions ORDER BY prID DESC;"
+        )
+        self.Data = self.cursor.fetchall()
+        self.graph = graph.Graph(self, 5, 3)
+        self.graph.grid(row=0, column=0, padx=10)
+        self.graph.add_subplot("line")
+        self.graph.plot("line",self.Data)
+
 
     def sync(self):
         with open(r"DB_DATA.txt", "r") as file:
             dbData = file.readline().split(",")
-        mydb = mysql.connector.connect(
+        self.db = mysql.connector.connect(
             host=dbData[0],
             user=dbData[1],
             passwd=dbData[2],
             database=dbData[3],
         )
-        mycursor = mydb.cursor(buffered=True)
-        mycursor.execute(
-            f"SELECT SUM(Amount),DOT from transactions WHERE ToAc = '{self.AcNo}' GROUP BY DOT ORDER BY DOT DESC LIMIT 10;"
-        )
-        self.toData = mycursor.fetchall()
-        self.toDataDic = {}
-        for i in self.toData:
-            self.toDataDic[i[1]] = i[0]
-        mycursor.execute(
-            f"SELECT SUM(Amount),DOT from transactions WHERE FromAc = '{self.AcNo}' GROUP BY DOT ORDER BY DOT DESC LIMIT 10;"
-        )
-        self.fromData = mycursor.fetchall()
-        self.fromDataDic = {}
-        for i in self.fromData:
-            self.fromDataDic[i[1]] = i[0]
-        self.graph = graph.Graph(self, 5, 3)
-        self.graph.grid(row=0, column=0, padx=10)
-        self.graph.add_subplot("line")
-        self.data = {}
-        for key in sorted(self.fromDataDic.keys() | self.toDataDic.keys()):
-            if key in self.fromDataDic.keys() and key in self.toDataDic.keys():
-                self.data[key] = self.toDataDic[key] - self.fromDataDic[key]
-            elif key in self.fromDataDic.keys():
-                self.data[key] = -self.fromDataDic[key]
-            else:
-                self.data[key] = self.toDataDic[key]
-        self.y = list(self.data.values())
-        self.x = [i for i in range(len(self.y))]
-        self.graph.plot("line", x=self.x, y=self.y)
-        mydb.close()
+        self.cursor = self.db.cursor(buffered=True)
+        self.setupUI(self.root, self.acno)
+
+    def syncTimer(self):
+        try:
+            while True and self.winfo_exists():
+                sleep(20)
+                self.container.destroy()
+                self.sync()
+        except:
+            pass
