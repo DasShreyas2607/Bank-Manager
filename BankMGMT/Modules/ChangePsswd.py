@@ -10,7 +10,7 @@ class change(Frame):
         self.sync()
         threading.Thread(target=self.syncTimer).start()
 
-    def SetupUI(self,root,acno):
+    def SetupUI(self, root, acno):
         self.container = Frame(self)
         self.container.grid(row=0, column=0)
         self.grid_rowconfigure(0, weight=1)
@@ -68,7 +68,7 @@ class change(Frame):
     def syncTimer(self):
         try:
             while True and self.winfo_exists():
-                sleep(60)
+                sleep(20)
                 self.sync()
         except:
             pass

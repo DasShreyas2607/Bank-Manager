@@ -81,6 +81,7 @@ class admin(Frame):
         threading.Thread(target=self.search(self.acnoen.get())).start()
 
     def search(self, acno):
+        self.sync()
         threading.Thread(
             self.cursor.execute(
                 f"SELECT Uname,Nationality,Password,City,Address,AcType,Caste,MobileNo,Balance,DOB,Gender,Admin FROM profile WHERE AcNo = '{self.acnoen.get()}';"
@@ -123,6 +124,8 @@ class admin(Frame):
             f"UPDATE profile SET Gender ='{self.gender.get()}',Admin ='{self.isAdmin.get()}',DOB='{self.dob.get_date()}' WHERE Acno in ('{self.acnoen.get()}');"
         )
         self.db.commit()
+        self.db.close()
+        self.sync()
 
     def sync(self):
         with open(r"DB_DATA.txt", "r") as file:
@@ -138,9 +141,10 @@ class admin(Frame):
     def syncTimer(self):
         try:
             while True and self.winfo_exists():
-                sleep(60)
+                sleep(20)
                 self.container.destroy()
                 self.sync()
+                self.pressed()
         except:
             pass
 
@@ -150,6 +154,8 @@ class user(admin):
         super().__init__(root, acno)
         self.acnoen["state"] = "disabled"
         self.labeldic["Password"]["state"] = "disabled"
+        self.labeldic["Balance"]["state"] = "disabled"
+        self.labeldic["AcType"]["state"] = "disabled"
         self.labeldic["Password"]["show"] = "*"
         self.adminen.grid_forget()
         self.adminlb.grid_forget()

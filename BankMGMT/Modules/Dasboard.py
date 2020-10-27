@@ -9,6 +9,7 @@ from PIL import Image, ImageTk
 from time import sleep
 import Modules.graph as graph
 
+
 class dasboard(Frame):
     def __init__(self, root, acno):
         super().__init__(root)
@@ -72,8 +73,7 @@ class dasboard(Frame):
         self.graph = graph.Graph(self, 5, 3)
         self.graph.grid(row=0, column=0, padx=10)
         self.graph.add_subplot("line")
-        self.graph.plot("line",self.Data)
-
+        self.graph.plot("line", self.Data)
 
     def sync(self):
         with open(r"DB_DATA.txt", "r") as file:

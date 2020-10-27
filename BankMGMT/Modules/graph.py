@@ -3,6 +3,7 @@ from matplotlib.figure import Figure
 from tkinter import Tk
 from tkinter.ttk import Frame
 from scipy.ndimage.filters import gaussian_filter1d as filt
+from scipy.interpolate import interp1d
 import numpy as np
 
 
@@ -18,7 +19,13 @@ class Graph(Frame):
         self.subPlots[name] = self.figure.add_subplot(int_)
 
     def plot(self, name, lst):
-        grph = [int(FR-TO) for TO,FR in lst]
-        ind = np.arange(len(lst))
-        self.subPlots[name].plot(ind, filt(grph[::-1],sigma=0.75),':',color='Brown')
-        self.subPlots[name].axis("off")
+        try:
+            grph = [int(FR - TO) for TO, FR in lst]
+            ind = np.arange(len(lst))
+            f = interp1d(ind, grph[::-1], kind="cubic")
+            nind = np.linspace(0, len(lst) - 1, 750)
+            self.subPlots[name].clear()
+            self.subPlots[name].plot(nind, f(nind), "--", color="red")
+            self.subPlots[name].axis("off")
+        except:
+            pass

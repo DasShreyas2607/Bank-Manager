@@ -118,7 +118,7 @@ class App(Frame):
         if mycursor.fetchone()[0]:
             self.notebook.add(
                 Admin.admin(self.notebook, self.AcNo),
-                text="Add Ac",
+                text="Add/Edit Ac",
                 image=self.Tkimages["add_user"],
                 compound="top",
             )

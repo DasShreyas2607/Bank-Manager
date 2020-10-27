@@ -11,18 +11,20 @@ class pay(Frame):
         super().__init__(
             root,
         )
+        self.AcNo = AcNo
+        self.bal = bal
         self.sync()
         threading.Thread(target=self.syncTimer).start()
         self.SetupUI(root, AcNo, bal)
-    def SetupUI(self,root, AcNo, bal):
-        self.bal = bal
+
+    def SetupUI(self, root, AcNo, bal):
         self.container = Frame(self)
         self.container.grid(row=0, column=0)
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)
         self.AcNo = AcNo
-        self.cursor.execute(f"SELECT Balance FROM profile WHERE AcNo = '{self.AcNo}';")
-        self.Balance = self.cursor.fetchone()[0]
+        """self.cursor.execute(f"SELECT Balance FROM profile WHERE AcNo = '{self.AcNo}';")
+        self.Balance = self.cursor.fetchone()[0]"""
         #
         #
         #
@@ -89,6 +91,7 @@ class pay(Frame):
 
     def pay(self):
         self.grid_propagate(flag=False)
+        self.sync()
         threading.Thread(target=self.payNow).start()
 
     def payNow(self):
@@ -99,26 +102,22 @@ class pay(Frame):
             entry.config(state="disabled")
         if self.payIsValidate(self.data):
             self.Balance = str(int(self.Balance) - int(self.AmntEntry.get()))
-            threading.Thread(
-                target=self.cursor.execute(
-                    f"INSERT INTO transactions(FromAc,ToAc,Amount,DOT,Remarks) VALUES('{self.AcNo}','{self.data[0]}',{self.data[2]},'{datetime.now()}','{self.data[1]}');"
-                )
+            self.cursor.execute(
+                f"INSERT INTO transactions(FromAc,ToAc,Amount,DOT,Remarks) VALUES('{self.AcNo}','{self.data[0]}',{self.data[2]},'{datetime.now()}','{self.data[1]}');"
             )
-            threading.Thread(
-                target=self.cursor.execute(
-                    f"UPDATE profile SET Balance = '{self.Balance}' WHERE AcNo = '{self.AcNo}';"
-                )
-            )
-            threading.Thread(
-                target=self.cursor.execute(
-                    f"UPDATE profile SET Balance = Balance + '{self.AmntEntry.get()}' WHERE AcNo = '{self.data[0]}';"
-                )
-            )
-            self.db.commit()
-            self.cursor.execute(f"SELECT Balance FROM profile WHERE AcNo = '{self.AcNo}';")
-            self.balance = self.cursor.fetchone()
 
-            self.bal.set(self.balance[0])
+            self.cursor.execute(
+                f"UPDATE profile SET Balance = '{self.Balance}' WHERE AcNo = '{self.AcNo}';"
+            )
+
+            self.cursor.execute(
+                f"UPDATE profile SET Balance = Balance + '{self.AmntEntry.get()}' WHERE AcNo = '{self.data[0]}';"
+            )
+
+            self.db.commit()
+            self.db.close()
+            self.sync()
+
             self.messageBox()
             for entry in [self.ToEntry, self.RemEntry, self.AmntEntry]:
                 entry.delete(0, "end")
@@ -131,9 +130,9 @@ class pay(Frame):
         elif not self.NameEntry.get():
             self.message.set(f"Acc no Found")
         elif int(self.AmntEntry.get()) > int(self.Balance):
-            self.message.set(f"Cannot pay more than Balance({self.Balance})")
+            self.message.set(f"Cannot pay more than Balance {self.Balance} ")
         elif int(self.AmntEntry.get()) >= int(self.Balance) - 500:
-            self.message.set(f"Should be 500 less than Balance({self.Balance})")
+            self.message.set(f"Should be 500 less than Balance {self.Balance} ")
         elif int(self.AmntEntry.get()) < 100:
             self.message.set("Should be atleast 100")
         else:
@@ -159,6 +158,9 @@ class pay(Frame):
             database=dbData[3],
         )
         self.cursor = self.db.cursor(buffered=True)
+        self.cursor.execute(f"SELECT Balance FROM profile WHERE AcNo = '{self.AcNo}';")
+        self.Balance = self.cursor.fetchmany(1)[0][0]
+        self.bal.set(self.Balance)
 
     def syncTimer(self):
         try:
@@ -167,8 +169,6 @@ class pay(Frame):
                 self.sync()
         except:
             pass
-
-
 
 
 if __name__ == "__main__":

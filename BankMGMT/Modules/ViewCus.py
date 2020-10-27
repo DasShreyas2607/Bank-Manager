@@ -15,16 +15,18 @@ class view(Frame):
         self.offset = 0
         #
         self.table = Treeview(self.container)
-        self.table["columns"] = ("Account No", "Name", "DOB", "Gender",'Admin')
+        self.table["columns"] = ("Account No", "Name", "DOB", "Gender", "Admin")
         self.table.column("#0", width=0, minwidth=0)
         for i in self.table["columns"]:
             self.table.heading(i, text=i)
         self.nextbtn = Button(self.container, text="Next", command=self.next)
+        self.refresh = Button(self.container, text="Sync", command=self.sync)
         self.prevbtn = Button(
             self.container, text="prev", command=self.prev, state="disabled"
         )
-        self.table.grid(row=0, column=0)
-        self.nextbtn.grid(row=1, column=0, sticky="e")
+        self.table.grid(row=0, column=0, columnspan=2)
+        self.refresh.grid(row=1, column=1, sticky="e", padx=100)
+        self.nextbtn.grid(row=1, column=1, sticky="e")
         self.prevbtn.grid(row=1, column=0, sticky="w")
         self.sync()
         threading.Thread(target=self.syncTimer).start()
@@ -64,7 +66,7 @@ class view(Frame):
     def syncTimer(self):
         try:
             while True and self.winfo_exists():
-                sleep(40)
+                sleep(60)
                 self.sync()
         except:
             pass
