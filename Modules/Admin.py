@@ -14,7 +14,6 @@ class admin(Frame):
         self.errBx = None
         self.message = StringVar()
         self.sync()
-        threading.Thread(target=self.syncTimer).start()
         self.container = Frame(self)
         self.container.grid(row=1, column=0)
         self.msg = Label(self, textvariable=self.message)
@@ -100,12 +99,20 @@ class admin(Frame):
         #
         self.doblb = Label(self.container, text="DOB")
         self.doblb.grid(row=self.row, column=0)
-        self.dob = DateEntry(self.container)
+        self.today = datetime.now()
+        try:
+            self.maxdate = self.today.replace(year=self.today.year - 18)
+        except ValueError:
+            self.maxdate = self.today.replace(
+                year=self.today.year - 18, day=self.today - 1
+            )
+        self.dob = DateEntry(
+            self.container, maxdate=self.maxdate, date_pattern="dd/mm/yyyy"
+        )
         self.dob.grid(row=self.row, column=1, sticky="we")
         if username != None:
             self.usernameen.insert(0, username)
             self.pressed()
-            threading.Thread(target=self.syncTimer).start()
 
     def pressed(self, key=None):
         threading.Thread(target=self.search(self.usernameen.get())).start()
@@ -176,17 +183,6 @@ class admin(Frame):
             database=dbData[3],
         )
         self.cursor = self.db.cursor(buffered=True)
-
-    def syncTimer(self):
-        try:
-            iter__ = 0
-            while self.winfo_exists():
-                sleep(1)
-                iter__ += 1
-                if iter__ == 10:
-                    self.sync()
-        except:
-            pass
 
     def close(self):
         try:

@@ -8,7 +8,6 @@ class change(Frame):
     def __init__(self, root, username):
         super().__init__(root)
         self.sync()
-        threading.Thread(target=self.syncTimer).start()
         self.SetupUI(root, username)
 
     def SetupUI(self, root, username):
@@ -49,6 +48,7 @@ class change(Frame):
             self.pssdlb["text"] = "Password criteria not satisfied!"
 
     def dbcommit(self):
+        self.sync()
         self.cursor.execute(
             f"UPDATE profile SET Password = '{self.labeldic['New Password'].get()}' WHERE username = '{self.username}' "
         )
@@ -65,14 +65,3 @@ class change(Frame):
             database=dbData[3],
         )
         self.cursor = self.db.cursor(buffered=True)
-
-    def syncTimer(self):
-        try:
-            iter__ = 0
-            while self.winfo_exists():
-                sleep(1)
-                iter__ += 1
-                if iter__ == 10:
-                    self.sync()
-        except:
-            pass

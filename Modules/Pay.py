@@ -14,7 +14,7 @@ class pay(Frame):
         self.acno = acno
         self.bal = bal
         self.sync()
-        threading.Thread(target=self.syncTimer).start()
+        # threading.Thread(target=self.syncTimer).start()
         self.SetupUI(root, acno, bal)
 
     def SetupUI(self, root, acno, bal):
