@@ -42,7 +42,7 @@ mycursor.execute(
  MobileNo VARCHAR(20),
  Gender VARCHAR(10),
  Admin TINYINT(1) DEFAULT 0,
- Balance NUMERIC DEFAULT 0;)"""
+ Balance NUMERIC DEFAULT 0);"""
 )
 print("profile table created!!")
 
