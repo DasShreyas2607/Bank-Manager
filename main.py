@@ -4,9 +4,6 @@ import mysql.connector
 from ttkthemes import ThemedStyle
 import threading
 import sys
-from datetime import *
-import random
-from importlib import reload
 from PIL import Image, ImageTk
 from Modules import Admin, Dasboard, ChangePsswd, Login, Pay, Transaction
 
@@ -155,6 +152,9 @@ class App(Frame):
                 self.master.quit()
                 self.master.destroy()
                 mydb.close()
+                with open("isExit", "w") as isExit:
+                    isExit.write("true")
+                sys.exit()
         except:
             pass
 

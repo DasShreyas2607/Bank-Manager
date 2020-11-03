@@ -2,10 +2,6 @@ from tkinter import Tk
 from tkinter.ttk import *
 import mysql.connector
 import threading
-from datetime import *
-import random
-import numpy as np
-from PIL import Image, ImageTk
 from time import sleep
 import Modules.graph as graph
 
@@ -100,11 +96,15 @@ class dasboard(Frame):
 
     def syncTimer(self):
         try:
-            while True and self.winfo_exists():
-                sleep(10)
-                self.container.destroy()
-                self.sync()
-                sleep(2)
-                self.syncGraph()
+            iter__ = 0
+            while self.winfo_exists():
+                sleep(1)
+                iter__ += 1
+                if iter__ == 10:
+                    iter__ = 0
+                    self.container.destroy()
+                    self.sync()
+                    sleep(2)
+                    self.syncGraph()
         except:
             pass

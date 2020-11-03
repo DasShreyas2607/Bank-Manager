@@ -4,7 +4,6 @@ from ttkthemes import ThemedStyle
 from tkcalendar import *
 import mysql.connector
 import threading
-from datetime import *
 import random
 from PIL import Image, ImageTk
 

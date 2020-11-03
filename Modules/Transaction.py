@@ -39,7 +39,6 @@ class transaction(Frame):
         threading.Thread(target=self.syncTimer).start()
 
     def next(self):
-        print(1)
         self.offset += 10
         if self.offset != 0:
             self.prevbtn.config(state="normal")
@@ -89,10 +88,14 @@ class transaction(Frame):
 
     def syncTimer(self):
         try:
-            while True and self.winfo_exists():
-                sleep(60)
-                self.sync()
-                self.syncBal()
+            iter__ = 0
+            while self.winfo_exists():
+                sleep(1)
+                iter__ += 1
+                if iter__ == 60:
+                    iter__ = 0
+                    self.sync()
+                    self.syncBal()
         except:
             pass
 

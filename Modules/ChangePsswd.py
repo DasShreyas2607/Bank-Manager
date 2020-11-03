@@ -68,8 +68,11 @@ class change(Frame):
 
     def syncTimer(self):
         try:
-            while True and self.winfo_exists():
-                sleep(10)
-                self.sync()
+            iter__ = 0
+            while self.winfo_exists():
+                sleep(1)
+                iter__ += 1
+                if iter__ == 10:
+                    self.sync()
         except:
             pass
