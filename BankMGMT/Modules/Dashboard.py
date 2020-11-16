@@ -2,43 +2,45 @@ from tkinter import Tk
 from tkinter.ttk import *
 import mysql.connector
 import threading
-from datetime import *
-import random
-import numpy as np
-from PIL import Image, ImageTk
 from time import sleep
 import Modules.graph as graph
 
 
-class dasboard(Frame):
-    def __init__(self, root, acno):
+class dashboard(Frame):
+    def __init__(self, root, username):
         super().__init__(root)
         self.root = root
-        self.acno = acno
-        self.sync()
-        threading.Thread(target=self.syncTimer).start()
-
-    def setupUI(self, root, acno):
-        self.AcNo = acno
+        self.username = username
+        self.container = None
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(1, weight=1)
-        self.cursor.execute(f"SELECT Balance FROM profile where AcNo = '{self.AcNo}';")
+        self.sync()
+        self.syncGraph()
+        threading.Thread(target=self.syncTimer).start()
 
+    def setupUI(self, root, username):
+        self.username = username
+        self.cursor.execute(
+            f"SELECT Balance FROM profile where username = '{self.username}';"
+        )
+        if self.container:
+            self.container.destroy()
         self.container = Frame(self, relief="ridge")
         self.container.grid(row=0, column=1, ipadx=10, ipady=2)
 
         self.cursor.execute(
-            f"SELECT Uname,DOB,Nationality,City,Address,AcNo,AcType,Caste,MobileNo,Gender FROM profile WHERE AcNo = '{self.AcNo}';"
+            f"SELECT AcNo,name,DOB,Nationality,City,Address,username,AcType,Caste,MobileNo,Gender FROM profile WHERE username = '{self.username}';"
         )
         self.dasblabels = dict(
             zip(
                 (
+                    "A/c No",
                     "Name",
                     "DOB",
                     "Nationality",
                     "City",
                     "Address",
-                    "A/c No",
+                    "User Name",
                     "A/c Type",
                     "Caste",
                     "Mobile No",
@@ -60,19 +62,24 @@ class dasboard(Frame):
             self.tempLabel = Label(self.container, text=self.dasblabels[txt]).grid(
                 column=self.clno + 1, row=self.iter, sticky="e", padx=8, pady=5
             )
-            if self.iter == 4:
+            if self.iter == 5:
                 self.iter = 0
                 self.clno += 3
             else:
                 self.iter += 1
 
-        self.cursor.execute(
-            f"SELECT IF(ToAc = '{self.acno}',Amount,0),IF(FromAc='{self.acno}',Amount,0) FROM transactions ORDER BY prID DESC;"
-        )
-        self.Data = self.cursor.fetchall()
+    def syncGraph(self):
+        try:
+            self.graph.destroy()
+        except:
+            pass
         self.graph = graph.Graph(self, 5, 3)
         self.graph.grid(row=0, column=0, padx=10)
         self.graph.add_subplot("line")
+        self.cursor.execute(
+            f"SELECT IF(ToAc = '{self.dasblabels['A/c No']}',Amount,0),IF(FromAc='{self.dasblabels['A/c No']}',Amount,0) FROM transactions ORDER BY prID DESC;"
+        )
+        self.Data = self.cursor.fetchall()
         self.graph.plot("line", self.Data)
 
     def sync(self):
@@ -85,13 +92,19 @@ class dasboard(Frame):
             database=dbData[3],
         )
         self.cursor = self.db.cursor(buffered=True)
-        self.setupUI(self.root, self.acno)
+        self.setupUI(self.root, self.username)
 
     def syncTimer(self):
         try:
-            while True and self.winfo_exists():
-                sleep(20)
-                self.container.destroy()
-                self.sync()
+            iter__ = 0
+            while self.winfo_exists():
+                sleep(1)
+                iter__ += 1
+                if iter__ == 10:
+                    iter__ = 0
+                    self.container.destroy()
+                    self.sync()
+                    sleep(2)
+                    self.syncGraph()
         except:
             pass

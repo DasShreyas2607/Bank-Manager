@@ -29,14 +29,14 @@ mycursor.execute(f"CREATE DATABASE IF NOT EXISTS BANK;")
 db.connect(database="BANK")
 
 mycursor.execute(
-    """CREATE TABLE IF NOT EXISTS profile(ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
- UName VARCHAR(50),
+    """CREATE TABLE IF NOT EXISTS profile(AcNo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+ Name VARCHAR(50),
  DOB DATE,
  Nationality VARCHAR(5),
  Password VARCHAR(250),
  City VARCHAR(50),
  Address VARCHAR(250),
- AcNo VARCHAR(10) UNIQUE,
+ username VARCHAR(10),
  AcType VARCHAR(20),
  Caste VARCHAR(20),
  MobileNo VARCHAR(20),
@@ -58,7 +58,7 @@ print("transactions table created!!")
 
 
 mycursor.execute(
-    f"INSERT IGNORE INTO profile(UName,DOB,Nationality,Password,City,Address,AcNo,AcType,Caste,MobileNo,Gender,Admin) VALUES('Admin','2000-01-01','IN','pass','Banglore','NIL','ADMIN','Staff','NIL','+091 123 456 7809','Male',1);"
+    f"INSERT IGNORE INTO profile(Name,DOB,Nationality,Password,City,Address,username,AcType,Caste,MobileNo,Gender,Admin) VALUES('Admin','2000-01-01','IN','pass','Banglore','NIL','ADMIN','Staff','NIL','+091 123 456 7809','Male',1);"
 )
 
 db.commit()

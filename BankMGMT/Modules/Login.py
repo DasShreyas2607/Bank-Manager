@@ -4,7 +4,6 @@ from ttkthemes import ThemedStyle
 from tkcalendar import *
 import mysql.connector
 import threading
-from datetime import *
 import random
 from PIL import Image, ImageTk
 
@@ -18,12 +17,12 @@ class login(Frame):
         self.container.grid(row=0, column=0)
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)
-        self.AcNo = None
+        self.username = None
         self.logo = Image.open(r"./assets/logo.jpg")
         self.logotk = ImageTk.PhotoImage(self.logo)
         #
         self.labeldic = {}
-        self.labels = ["A/c No", "Password"]
+        self.labels = ["Username", "Password"]
         self.row, self.column = (1, 0)
         for label in self.labels:
             self.label = Label(self.container, text=label)
@@ -43,11 +42,11 @@ class login(Frame):
 
     def login(self):
         mycursor.execute(
-            f"SELECT UName FROM profile WHERE AcNo = '{self.labeldic['A/c No'].get()}' AND BINARY Password = '{self.labeldic['Password'].get()}';"
+            f"SELECT Name FROM profile WHERE username = '{self.labeldic['Username'].get()}' AND BINARY Password = '{self.labeldic['Password'].get()}';"
         )
         cursor = mycursor.fetchone()
         if cursor:
-            self.AcNo = self.labeldic["A/c No"].get()
+            self.username = self.labeldic["Username"].get()
             self.container.destroy()
             self.update()
             self.progressbar()
@@ -83,7 +82,7 @@ class login(Frame):
             self.func()
             threading.Thread(
                 target=mycursor.execute(
-                    f"SELECT Balance FROM profile WHERE AcNo = '{self.AcNo}';"
+                    f"SELECT Balance FROM profile WHERE username = '{self.username}';"
                 )
             ).start()
             self.bal.set(f"{mycursor.fetchone()[0]}")

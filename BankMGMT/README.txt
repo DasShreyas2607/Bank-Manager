@@ -7,4 +7,4 @@
 
 ##_________NOTE________##
 
-NOTE: Will create a new database called BANKMGMT in root
+NOTE: Will create a new database called BANK in root

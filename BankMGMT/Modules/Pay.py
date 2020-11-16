@@ -7,23 +7,23 @@ import threading
 
 
 class pay(Frame):
-    def __init__(self, root, AcNo, bal):
+    def __init__(self, root, acno, bal):
         super().__init__(
             root,
         )
-        self.AcNo = AcNo
+        self.acno = acno
         self.bal = bal
         self.sync()
-        threading.Thread(target=self.syncTimer).start()
-        self.SetupUI(root, AcNo, bal)
+        # threading.Thread(target=self.syncTimer).start()
+        self.SetupUI(root, acno, bal)
 
-    def SetupUI(self, root, AcNo, bal):
+    def SetupUI(self, root, acno, bal):
         self.container = Frame(self)
         self.container.grid(row=0, column=0)
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)
-        self.AcNo = AcNo
-        """self.cursor.execute(f"SELECT Balance FROM profile WHERE AcNo = '{self.AcNo}';")
+        self.acno = acno
+        """self.cursor.execute(f"SELECT Balance FROM profile WHERE acno = '{self.acno}';")
         self.Balance = self.cursor.fetchone()[0]"""
         #
         #
@@ -80,14 +80,19 @@ class pay(Frame):
         if name:
             self.NameEntry.config(state="normal")
             self.NameEntry.delete(0, "end")
-            self.cursor.execute(f"SELECT Uname FROM profile WHERE AcNo = '{name}';")
+            self.cursor.execute(f"SELECT name FROM profile WHERE acno = '{name}';")
             toName = self.cursor.fetchone()
             if toName:
                 self.NameEntry.insert("end", str(toName[0]))
             (self.cursor.fetchone())
             self.NameEntry.config(state="readonly")
             self.update()
-        return True
+            return True
+        else:
+            self.NameEntry.config(state="normal")
+            self.NameEntry.delete(0, "end")
+            self.NameEntry.config(state="readonly")
+            return True
 
     def pay(self):
         self.grid_propagate(flag=False)
@@ -103,15 +108,15 @@ class pay(Frame):
         if self.payIsValidate(self.data):
             self.Balance = str(int(self.Balance) - int(self.AmntEntry.get()))
             self.cursor.execute(
-                f"INSERT INTO transactions(FromAc,ToAc,Amount,DOT,Remarks) VALUES('{self.AcNo}','{self.data[0]}',{self.data[2]},'{datetime.now()}','{self.data[1]}');"
+                f"INSERT INTO transactions(FromAc,ToAc,Amount,DOT,Remarks) VALUES('{self.acno}','{self.data[0]}',{self.data[2]},'{datetime.now()}','{self.data[1]}');"
             )
 
             self.cursor.execute(
-                f"UPDATE profile SET Balance = '{self.Balance}' WHERE AcNo = '{self.AcNo}';"
+                f"UPDATE profile SET Balance = '{self.Balance}' WHERE acno = '{self.acno}';"
             )
 
             self.cursor.execute(
-                f"UPDATE profile SET Balance = Balance + '{self.AmntEntry.get()}' WHERE AcNo = '{self.data[0]}';"
+                f"UPDATE profile SET Balance = Balance + '{self.AmntEntry.get()}' WHERE acno = '{self.data[0]}';"
             )
 
             self.db.commit()
@@ -128,7 +133,7 @@ class pay(Frame):
         if not self.AmntEntry.get():
             self.message.set(f"Enter Amount")
         elif not self.NameEntry.get():
-            self.message.set(f"Acc no Found")
+            self.message.set(f"Invalid Payee")
         elif int(self.AmntEntry.get()) > int(self.Balance):
             self.message.set(f"Cannot pay more than Balance {self.Balance} ")
         elif int(self.AmntEntry.get()) >= int(self.Balance) - 500:
@@ -158,21 +163,19 @@ class pay(Frame):
             database=dbData[3],
         )
         self.cursor = self.db.cursor(buffered=True)
-        self.cursor.execute(f"SELECT Balance FROM profile WHERE AcNo = '{self.AcNo}';")
+        self.cursor.execute(f"SELECT Balance FROM profile WHERE acno = '{self.acno}';")
         self.Balance = self.cursor.fetchmany(1)[0][0]
         self.bal.set(self.Balance)
 
     def syncTimer(self):
         try:
-            while True and self.winfo_exists():
-                sleep(60)
-                self.sync()
+            iter__ = 0
+            while self.winfo_exists():
+                sleep(1)
+                iter__ += 1
+                if iter__ == 10:
+                    iter__ = 0
+                    self.sync()
         except:
             pass
 
-
-if __name__ == "__main__":
-    win = Tk()
-    app = pay(win, "test")
-    app.grid()
-    win.mainloop()

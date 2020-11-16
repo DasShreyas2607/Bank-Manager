@@ -4,11 +4,8 @@ import mysql.connector
 from ttkthemes import ThemedStyle
 import threading
 import sys
-from datetime import *
-import random
-from importlib import reload
 from PIL import Image, ImageTk
-from Modules import Admin, Dasboard, ChangePsswd, Login, Pay, Transaction, ViewCus
+from Modules import Admin, Dashboard, ChangePsswd, Login, Pay, Transaction
 
 #
 #
@@ -40,7 +37,7 @@ class App(Frame):
     def setupUI(self, master, theme):
         self.master = master
         self.theme = theme
-        self.AcNo = None
+        self.username = None
         self.TkBal = StringVar()
         self.Admin = None
         #
@@ -68,7 +65,11 @@ class App(Frame):
     def panel(self):
         self.ballb.grid(row=0, column=1, sticky="e")
         self.ballb2.grid(row=0, column=2, sticky="e")
-        self.AcNo = self.loginContainer.AcNo
+        self.username = self.loginContainer.username
+        mycursor.execute(
+            f"SELECT AcNo FROM profile WHERE username = '{self.username}';"
+        )
+        self.acno = mycursor.fetchone()[0]
         style = Style(self)
         style.configure("leftTab.TNotebook", tabposition="s")
         style.theme_settings(
@@ -80,20 +81,22 @@ class App(Frame):
         self.notebook.pack(expand=True, fill="both")
         self.notebook.bind("<<NotebookTabChanged>>", self.logout)
         self.tabs = {
-            "Dasboard": Dasboard.dasboard(self.notebook, self.AcNo),
+            "Dashboard": Dashboard.dashboard(self.notebook, self.username),
             "Transactions": Transaction.transaction(
-                self.notebook, self.AcNo, self.TkBal
+                self.notebook, self.acno, self.TkBal
             ),
-            "Pay": Pay.pay(self.notebook, self.AcNo, self.TkBal),
-            "Change Password": ChangePsswd.change(self.notebook, self.AcNo),
-            "Settings": Admin.user(self.notebook, self.AcNo),
+            "Pay": Pay.pay(self.notebook, self.acno, self.TkBal),
+            "Change Password": ChangePsswd.change(self.notebook, self.username),
+            "Settings": Admin.user(self.notebook, self.username),
         }
-        mycursor.execute(f"SELECT Admin FROM profile WHERE AcNo = '{self.AcNo}';")
+        mycursor.execute(
+            f"SELECT Admin FROM profile WHERE username = '{self.username}';"
+        )
         self.images = {}
         self.Tkimages = {}
         self.ImageIter = 0
         for image in [
-            "Dasboard",
+            "Dashboard",
             "Transactions",
             "Pay",
             "Change Password",
@@ -117,13 +120,13 @@ class App(Frame):
 
         if mycursor.fetchone()[0]:
             self.notebook.add(
-                Admin.admin(self.notebook, self.AcNo),
+                Admin.admin(self.notebook, self.username),
                 text="Add/Edit Ac",
                 image=self.Tkimages["add_user"],
                 compound="top",
             )
             self.notebook.add(
-                ViewCus.view(self.notebook),
+                Transaction.view(self.notebook),
                 text="View Clients",
                 image=self.Tkimages["view"],
                 compound="top",
@@ -139,6 +142,9 @@ class App(Frame):
                 self.master.quit()
                 self.master.destroy()
                 mydb.close()
+                with open("isExit", "w") as isExit:
+                    isExit.write("true")
+                sys.exit()
         except:
             pass
 
@@ -147,11 +153,11 @@ if __name__ == "__main__":
     #
     win = Tk()
     #
-    theme = "equilux"
+    theme = "breeze"
     style = ThemedStyle(win)
     style.theme_use(theme)
     #
-    win.geometry("1000x600")
+    win.geometry("1250x600")
     logo = Image.open(r"./assets/logo.jpg")
     logotk = ImageTk.PhotoImage(logo)
     win.iconphoto(True, logotk)

@@ -5,17 +5,17 @@ import threading
 
 
 class change(Frame):
-    def __init__(self, root, acno):
+    def __init__(self, root, username):
         super().__init__(root)
         self.sync()
-        threading.Thread(target=self.syncTimer).start()
+        self.SetupUI(root, username)
 
-    def SetupUI(self, root, acno):
+    def SetupUI(self, root, username):
         self.container = Frame(self)
         self.container.grid(row=0, column=0)
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)
-        self.AcNo = acno
+        self.username = username
         #
         self.pssdlb = Label(self.container, text=" ")
         self.pssdlb.grid(row=1, columnspan=2)
@@ -41,17 +41,18 @@ class change(Frame):
             self.labeldic["New Password"].get()
             and self.labeldic["New Password"].get()
             == self.labeldic["Confirm Password"].get()
-            and len(self.labeldic["New Password"].get()) < 245
+            and 8 < len(self.labeldic["New Password"].get()) < 245
         ):
             self.dbcommit()
         else:
             self.pssdlb["text"] = "Password criteria not satisfied!"
 
     def dbcommit(self):
-        mycursor.execute(
-            f"UPDATE profile SET Password = '{self.labeldic['New Password'].get()}' WHERE AcNo = '{self.AcNo}' "
+        self.sync()
+        self.cursor.execute(
+            f"UPDATE profile SET Password = '{self.labeldic['New Password'].get()}' WHERE username = '{self.username}' "
         )
-        mydb.commit()
+        self.db.commit()
         self.pssdlb["text"] = "Password Updated ! Takes effect after restart"
 
     def sync(self):
@@ -64,11 +65,3 @@ class change(Frame):
             database=dbData[3],
         )
         self.cursor = self.db.cursor(buffered=True)
-
-    def syncTimer(self):
-        try:
-            while True and self.winfo_exists():
-                sleep(20)
-                self.sync()
-        except:
-            pass
