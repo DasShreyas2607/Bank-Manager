@@ -34,7 +34,7 @@ class transaction(Frame):
         self.column += 1
         self.refresh.grid(row=self.row, column=self.column, sticky="e", padx=100)
         self.nextbtn.grid(row=self.row, column=self.column, sticky="e")
-        self.sqlQuery = f"SELECT ToAc, Amount, DOT, Remarks FROM transactions WHERE FromAc = '{self.acno}' OR ToAc = '{self.acno}' ORDER BY prID DESC LIMIT 10"
+        self.sqlQuery = f"SELECT TO_ACC, AMOUNT, TRANSACTION_DATE, REMARKS FROM TRANSACTIONS WHERE FROM_ACC = '{self.acno}' OR TO_ACC = '{self.acno}' ORDER BY TRANSACTION_ID DESC LIMIT 10"
         self.sync()
         threading.Thread(target=self.syncTimer).start()
 
@@ -62,7 +62,9 @@ class transaction(Frame):
             database=dbData[3],
         )
         mycursor = mydb.cursor(buffered=True)
-        mycursor.execute(self.sqlQuery + f" OFFSET {self.offset};")
+        temp = self.sqlQuery + f" OFFSET {self.offset};"
+
+        mycursor.execute(temp)
         self.transactionData = mycursor.fetchall()
         mydb.close()
         for tup in self.transactionData:
@@ -80,7 +82,7 @@ class transaction(Frame):
             )
             mycursor1 = mydb1.cursor(buffered=True)
             mycursor1.execute(
-                f"SELECT Balance FROM profile WHERE acno = '{self.acno}';"
+                f"SELECT BALANCE FROM ACCOUNT WHERE ACCOUNT_NO = '{self.acno}';"
             )
             self.balance = mycursor1.fetchone()
             mydb1.close()
@@ -101,10 +103,24 @@ class transaction(Frame):
 
 
 class view(transaction):
-    def __init__(self, root):
-        super().__init__(root, acno=None, bal=None)
+    def __init__(self, root, acno):
+        super().__init__(root, acno=acno, bal=None)
         self.table["columns"] = ("Account No", "UserName", "DOB", "Gender", "Admin")
         for i in self.table["columns"]:
             self.table.heading(i, text=i)
-        self.sqlQuery = f"SELECT acno,username,DOB,Gender,IF(Admin=1,'Yes','No') FROM profile ORDER BY AcNo DESC LIMIT 10"
+        self.sqlQuery = f"SELECT A.ACCOUNT_NO, L.USERNAME, P.DOB, P.Gender, IF(A.ADMINISTRATOR='T','Yes','No') FROM ACCOUNT A INNER JOIN PERSON P ON A.PERSON_ID = P.PERSON_ID INNER JOIN LOGIN_INFO L ON A.ACCOUNT_NO = L.ACCOUNT_NO WHERE BRANCH_ID=(SELECT BRANCH_ID FROM ACCOUNT WHERE ACCOUNT_NO = {acno}) ORDER BY ACCOUNT_NO DESC LIMIT 10"
+        # SELECT TO_ACC, AMOUNT, TRANSACTION_DATE, REMARKS FROM TRANSACTIONS WHERE FROM_ACC = '{self.acno}' OR TO_ACC = '{self.acno}' ORDER BY TRANSACTION_ID DESC LIMIT 10;
+        self.sync()
+
+class loan(transaction):
+    def __init__(self, root, acno, admin):
+        super().__init__(root, acno=acno, bal=None)
+        self.table["columns"] = ("TOTAL AMOUNT", "INTREST", "AMOUNT LEFT", "OFFERED BY", "OFFERED TO")
+        for i in self.table["columns"]:
+            self.table.heading(i, text=i)
+        if admin == 'F':
+            self.sqlQuery = f"SELECT TOTAL_AMOUNT, INTREST, AMOUNT_LEFT, OFFERED_BY, OFFERED_TO FROM LOAN WHERE OFFERED_TO={acno} ORDER BY LOAN_ID DESC LIMIT 10"
+        else:
+            self.sqlQuery = f"SELECT TOTAL_AMOUNT, INTREST, AMOUNT_LEFT, OFFERED_BY, OFFERED_TO FROM LOAN WHERE OFFERED_BY=(SELECT BRANCH_ID FROM ACCOUNT WHERE ACCOUNT_NO = {acno}) ORDER BY LOAN_ID DESC LIMIT 10"
+        # SELECT TO_ACC, AMOUNT, TRANSACTION_DATE, REMARKS FROM TRANSACTIONS WHERE FROM_ACC = '{self.acno}' OR TO_ACC = '{self.acno}' ORDER BY TRANSACTION_ID DESC LIMIT 10;
         self.sync()

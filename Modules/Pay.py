@@ -23,7 +23,7 @@ class pay(Frame):
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)
         self.acno = acno
-        """self.cursor.execute(f"SELECT Balance FROM profile WHERE acno = '{self.acno}';")
+        """self.cursor.execute(f"SELECT BALANCE FROM ACCOUNT WHERE ACCOUNT_ID = '{self.acno}';")
         self.Balance = self.cursor.fetchone()[0]"""
         #
         #
@@ -80,7 +80,7 @@ class pay(Frame):
         if name:
             self.NameEntry.config(state="normal")
             self.NameEntry.delete(0, "end")
-            self.cursor.execute(f"SELECT name FROM profile WHERE acno = '{name}';")
+            self.cursor.execute(f"SELECT P.NAME FROM ACCOUNT A INNER JOIN PERSON P ON A.PERSON_ID = P.PERSON_ID WHERE A.ACCOUNT_NO = '{name}';")
             toName = self.cursor.fetchone()
             if toName:
                 self.NameEntry.insert("end", str(toName[0]))
@@ -108,15 +108,15 @@ class pay(Frame):
         if self.payIsValidate(self.data):
             self.Balance = str(int(self.Balance) - int(self.AmntEntry.get()))
             self.cursor.execute(
-                f"INSERT INTO transactions(FromAc,ToAc,Amount,DOT,Remarks) VALUES('{self.acno}','{self.data[0]}',{self.data[2]},'{datetime.now()}','{self.data[1]}');"
+                f"INSERT INTO TRANSACTIONS(FROM_ACC,TO_ACC,AMOUNT,TRANSACTION_DATE,REMARKS) VALUES('{self.acno}','{self.data[0]}',{self.data[2]},'{datetime.now()}','{self.data[1]}');"
             )
 
             self.cursor.execute(
-                f"UPDATE profile SET Balance = '{self.Balance}' WHERE acno = '{self.acno}';"
+                f"UPDATE ACCOUNT SET BALANCE = '{self.Balance}' WHERE ACCOUNT_NO = '{self.acno}';"
             )
 
             self.cursor.execute(
-                f"UPDATE profile SET Balance = Balance + '{self.AmntEntry.get()}' WHERE acno = '{self.data[0]}';"
+                f"UPDATE ACCOUNT SET BALANCE = BALANCE + '{self.AmntEntry.get()}' WHERE ACCOUNT_NO = '{self.data[0]}';"
             )
 
             self.db.commit()
@@ -163,7 +163,7 @@ class pay(Frame):
             database=dbData[3],
         )
         self.cursor = self.db.cursor(buffered=True)
-        self.cursor.execute(f"SELECT Balance FROM profile WHERE acno = '{self.acno}';")
+        self.cursor.execute(f"SELECT BALANCE FROM ACCOUNT WHERE ACCOUNT_NO = '{self.acno}';")
         self.Balance = self.cursor.fetchmany(1)[0][0]
         self.bal.set(self.Balance)
 

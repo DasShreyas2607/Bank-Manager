@@ -21,6 +21,8 @@ class login(Frame):
         self.logo = Image.open(r"./assets/logo.jpg")
         self.logotk = ImageTk.PhotoImage(self.logo)
         #
+        self.acno = None
+        #
         self.labeldic = {}
         self.labels = ["Username", "Password"]
         self.row, self.column = (1, 0)
@@ -42,7 +44,7 @@ class login(Frame):
 
     def login(self):
         mycursor.execute(
-            f"SELECT Name FROM profile WHERE username = '{self.labeldic['Username'].get()}' AND BINARY Password = '{self.labeldic['Password'].get()}';"
+            f"SELECT ACCOUNT_NO FROM LOGIN_INFO WHERE USERNAME = '{self.labeldic['Username'].get()}' AND BINARY PASSWORD = '{self.labeldic['Password'].get()}';"
         )
         cursor = mycursor.fetchone()
         if cursor:
@@ -80,12 +82,12 @@ class login(Frame):
             self.loginnamelabel.destroy()
             self.update()
             self.func()
-            threading.Thread(
-                target=mycursor.execute(
-                    f"SELECT Balance FROM profile WHERE username = '{self.username}';"
-                )
-            ).start()
-            self.bal.set(f"{mycursor.fetchone()[0]}")
+            # threading.Thread(
+            #     target=mycursor.execute(
+            #         f"SELECT BALANCE FROM ACCOUNT WHERE ACCOUNT_NO = '{self.acno}';"
+            #     )
+            # ).start()
+            # self.bal.set(f"{mycursor.fetchone()[0]}")
             self.destroy()
 
 

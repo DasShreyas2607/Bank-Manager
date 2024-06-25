@@ -33,7 +33,7 @@ class App(Frame):
     def __init__(self, master):
         super().__init__(master)
         self.master = master
-        self.syncFunc = []
+        
 
     def setupUI(self, master, theme):
         self.master = master
@@ -68,9 +68,13 @@ class App(Frame):
         self.ballb2.grid(row=0, column=2, sticky="e")
         self.username = self.loginContainer.username
         mycursor.execute(
-            f"SELECT AcNo FROM profile WHERE username = '{self.username}';"
+            f"SELECT ACCOUNT_NO FROM LOGIN_INFO WHERE USERNAME= '{self.username}';"
         )
         self.acno = mycursor.fetchone()[0]
+        mycursor.execute(
+            f"SELECT ADMINISTRATOR FROM ACCOUNT WHERE ACCOUNT_NO= '{self.acno}';"
+        )
+        self.isAdmin = mycursor.fetchone()[0]
         style = Style(self)
         style.configure("leftTab.TNotebook", tabposition="s")
         style.theme_settings(
@@ -87,19 +91,12 @@ class App(Frame):
                 self.notebook, self.acno, self.TkBal
             ),
             "Pay": Pay.pay(self.notebook, self.acno, self.TkBal),
+            "View Loans": Transaction.loan(self.notebook, self.acno, self.isAdmin),
             "Change Password": ChangePsswd.change(self.notebook, self.username),
             "Settings": Admin.user(self.notebook, self.username),
         }
-        self.syncFunc = [
-            Dasboard.dasboard,
-            Transaction.transaction,
-            Pay.pay,
-            ChangePsswd.change,
-            Admin.user,
-        ]
-        mycursor.execute(
-            f"SELECT Admin FROM profile WHERE username = '{self.username}';"
-        )
+        
+        
         self.images = {}
         self.Tkimages = {}
         self.ImageIter = 0
@@ -107,6 +104,7 @@ class App(Frame):
             "Dasboard",
             "Transactions",
             "Pay",
+            "View Loans",
             "Change Password",
             "Settings",
             "add_user",
@@ -114,7 +112,7 @@ class App(Frame):
             "leave",
         ]:
             self.images[image] = Image.open(f".//assets//{image}.png")
-            self.images[image].thumbnail((30, 30), Image.ANTIALIAS)
+            self.images[image].thumbnail((30, 30), Image.LANCZOS)
             self.Tkimages[image] = ImageTk.PhotoImage(self.images[image])
 
         for tab in self.tabs.keys():
@@ -126,21 +124,21 @@ class App(Frame):
             )
             self.ImageIter += 1
 
-        if mycursor.fetchone()[0]:
+        if self.isAdmin == 'T':
             self.notebook.add(
                 Admin.admin(self.notebook, self.username),
                 text="Add/Edit Ac",
                 image=self.Tkimages["add_user"],
                 compound="top",
             )
-            self.syncFunc.append(Admin.admin)
+            
             self.notebook.add(
-                Transaction.view(self.notebook),
+                Transaction.view(self.notebook, self.acno),
                 text="View Clients",
                 image=self.Tkimages["view"],
                 compound="top",
             )
-            self.syncFunc.append(Transaction.view)
+            
 
         self.notebook.add(
             Frame(), text="Logout", image=self.Tkimages["leave"], compound="top"

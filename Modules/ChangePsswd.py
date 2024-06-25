@@ -50,7 +50,7 @@ class change(Frame):
     def dbcommit(self):
         self.sync()
         self.cursor.execute(
-            f"UPDATE profile SET Password = '{self.labeldic['New Password'].get()}' WHERE username = '{self.username}' "
+            f"UPDATE LOGIN_INFO SET PASSWORD = '{self.labeldic['New Password'].get()}' WHERE USERNAME = '{self.username}' "
         )
         self.db.commit()
         self.pssdlb["text"] = "Password Updated ! Takes effect after restart"

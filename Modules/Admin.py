@@ -47,9 +47,9 @@ class admin(Frame):
         #
         # fmt: off
         self.labels = [
-            'Name','Nationality','Password',
-            'City','Address','AcType',
-            'Caste','MobileNo','Balance',
+            'ACCOUNT NO','BALANCE','ACCOUNT TYPE',
+            'MOBILE','BRANCH ID', 'PERSON ID',
+            'NAME', 'ADDRESS', 'PASSWORD'
         ]
         # fmt: on
         self.AlwaysTrue = True
@@ -77,11 +77,11 @@ class admin(Frame):
             self.row += 1
         #
         #
-        self.genders = ["Female", "Male"]
+        self.genders = ["F", "M"]
         self.gender = StringVar()
         self.isAdmin = IntVar()
         #
-        self.genlb = Label(self.container, text="Gender")
+        self.genlb = Label(self.container, text="GENDER")
         self.genlb.grid(row=self.row - 1, column=0, padx=3, pady=3)
         self.genContainer = Frame(self.container)
         for gen in self.genders:
@@ -91,8 +91,7 @@ class admin(Frame):
             b.pack(side="left")
         self.genContainer.grid(row=self.row - 1, column=1, padx=3, pady=3)
         #
-        #
-        self.adminlb = Label(self.container, text="Admin")
+        self.adminlb = Label(self.container, text="ADMIN")
         self.adminlb.grid(row=self.row, column=2, padx=3, pady=3)
         self.adminen = Checkbutton(self.container, variable=self.isAdmin)
         self.adminen.grid(row=self.row, column=3, padx=3, pady=3)
@@ -121,7 +120,7 @@ class admin(Frame):
         self.sync()
         threading.Thread(
             self.cursor.execute(
-                f"SELECT name,Nationality,Password,City,Address,AcType,Caste,MobileNo,Balance,DOB,Gender,Admin FROM profile WHERE username = '{self.usernameen.get()}';"
+                f"SELECT A.ACCOUNT_NO, A.BALANCE, A.ACCOUNT_TYPE, A.MOBILE, A.BRANCH_ID, P.PERSON_ID, P.NAME, P.ADDRESS, L.PASSWORD, P.DOB, P.GENDER, A.ADMINISTRATOR FROM ACCOUNT A INNER JOIN PERSON P ON A.PERSON_ID = P.PERSON_ID INNER JOIN LOGIN_INFO L ON A.ACCOUNT_NO = L.ACCOUNT_NO WHERE L.USERNAME = '{self.usernameen.get()}';"
             )
         ).start()
         self.data = self.cursor.fetchone()
@@ -131,7 +130,7 @@ class admin(Frame):
                 self.labeldic[key][-1].set(str(self.data[index]))
                 self.update()
                 index += 1
-            self.isAdmin.set(int(self.data[-1]))
+            self.isAdmin.set(int(1 if self.data[-1] == 'T' else 0))
             self.gender.set(self.data[-2])
             self.dob.set_date(self.data[-3])
             self.savebtnvar.set("Save")
@@ -154,21 +153,32 @@ class admin(Frame):
         try:
             if not self.data:
                 self.cursor.execute(
-                    f"INSERT INTO profile(username) VALUES('{self.usernameen.get()}');"
+                    f"INSERT INTO LOGIN_INFO(USERNAME, ACCOUNT_NO) VALUES('{self.usernameen.get()}', {self.labeldic['ACCOUNT_NO'].get()});"
                 )
                 self.db.commit()
         except:
             pass
 
-        iter_ = 0
-        for values in self.labeldic.values():
-            self.cursor.execute(
-                f"UPDATE profile SET {self.labels[iter_]}='{values[-1].get()}' WHERE username in ('{self.usernameen.get()}');"
-            )
-            iter_ += 1
+        # P.NAME, P.ADDRESS, L.PASSWORD, P.DOB, P.GENDER,
         self.cursor.execute(
-            f"UPDATE profile SET Gender ='{self.gender.get()}',Admin ='{self.isAdmin.get()}',DOB='{self.dob.get_date()}' WHERE username in ('{self.usernameen.get()}');"
-        )
+                f"UPDATE ACCOUNT SET BALANCE='{self.labeldic['BALANCE'][1].get()}', ACCOUNT_TYPE='{self.labeldic['ACCOUNT TYPE'][1].get()}', MOBILE='{self.labeldic['MOBILE'][1].get()}', BRANCH_ID='{self.labeldic['BRANCH ID'][1].get()}', ADMINISTRATOR='{'T' if self.isAdmin.get() == 1 else 'F'}' WHERE ACCOUNT_NO = '{self.labeldic['ACCOUNT NO'][1].get()}';"
+            )
+        self.cursor.execute(
+                f"UPDATE LOGIN_INFO SET PASSWORD='{self.labeldic['PASSWORD'][1].get()}' WHERE USERNAME='{self.usernameen.get()}';"
+            )
+        self.cursor.execute(
+                f"UPDATE PERSON SET NAME='{self.labeldic['NAME'][1].get()}', ADDRESS='{self.labeldic['ADDRESS'][1].get()}', DOB='{self.dob.get_date()}', GENDER='{self.gender.get()}' WHERE PERSON_ID='{self.labeldic['PERSON ID'][1].get()}';"
+            )
+
+        # iter_ = 0
+        # for values in self.labeldic.values():
+        #     self.cursor.execute(
+        #         f"UPDATE ACCOUNT SET {self.labels[iter_]}='{values[-1].get()}' WHERE username in ('{self.usernameen.get()}');"
+        #     )
+        #     iter_ += 1
+        # self.cursor.execute(
+        #     f"UPDATE profile SET Gender ='{self.gender.get()},DOB='{self.dob.get_date()}' WHERE username in ('{self.usernameen.get()}');"
+        # )
         self.db.commit()
         self.db.close()
         self.sync()
@@ -199,9 +209,18 @@ class admin(Frame):
             pass
 
     def closeAcc(self):
+        # self.cursor.execute(
+        #     f"DELETE FROM profile WHERE username = '{self.usernameen.get()}';"
+        # )
         self.cursor.execute(
-            f"DELETE FROM profile WHERE username = '{self.usernameen.get()}';"
-        )
+                f"DELETE FROM ACCOUNT WHERE ACCOUNT_NO = {self.labeldic['ACCOUNT NO'].get()};"
+            )
+        self.cursor.execute(
+                f"DELETE FROM WHERE USERNAME={self.usernameen.get()};"
+            )
+        self.cursor.execute(
+                f"DELETE FROM WHERE PERSON_ID={self.labeldic['PERSON ID'].get()};"
+            )
         self.db.commit()
         self.pressed()
         self.closeWin.destroy()
@@ -210,7 +229,7 @@ class admin(Frame):
         text = label.split(".")[-1]
         if text == "password":
             if len(word) < 8:
-                self.labeldic["Password"][0].focus_set()
+                self.labeldic["PASSWORD"][0].focus_set()
                 self.message.set("Password length should be atleast 8")
                 try:
                     threading.Thread(target=self.messageTimer).start()
@@ -232,10 +251,10 @@ class user(admin):
     def __init__(self, root, username):
         super().__init__(root, username)
         self.usernameen["state"] = "disabled"
-        self.labeldic["Password"][0]["state"] = "disabled"
-        self.labeldic["Balance"][0]["state"] = "disabled"
-        self.labeldic["AcType"][0]["state"] = "disabled"
-        self.labeldic["Password"][0]["show"] = "*"
+        self.labeldic["PASSWORD"][0]["state"] = "disabled"
+        self.labeldic["BALANCE"][0]["state"] = "disabled"
+        self.labeldic["ACCOUNT TYPE"][0]["state"] = "disabled"
+        self.labeldic["PASSWORD"][0]["show"] = "*"
         self.adminen.grid_forget()
         self.adminlb.grid_forget()
         self.delete.destroy()

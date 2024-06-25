@@ -1,8 +1,10 @@
 from subprocess import run
+import os
 
 print("Installing modules")
-run(["pip", "install", "--quiet", "-r", "requirements.txt"])
+run(["pipenv", "install", "--quiet", "-r", "requirements.txt"])
 print("Done")
+
 import mysql.connector as sql
 
 running = 5
@@ -25,50 +27,105 @@ while running:
             exit("Error! Too Many Attempts")
 
 mycursor = db.cursor()
+
+if (input("DROP BANK IF EXIST? y/N: ").lower().strip() == "y"):
+    mycursor.execute("DROP DATABASE IF EXISTS BANK;")
+
 mycursor.execute(f"CREATE DATABASE IF NOT EXISTS BANK;")
 db.connect(database="BANK")
 
 mycursor.execute(
-    """CREATE TABLE IF NOT EXISTS profile(AcNo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
- Name VARCHAR(50),
- DOB DATE,
- Nationality VARCHAR(5),
- Password VARCHAR(250),
- City VARCHAR(50),
- Address VARCHAR(250),
- username VARCHAR(10),
- AcType VARCHAR(20),
- Caste VARCHAR(20),
- MobileNo VARCHAR(20),
- Gender VARCHAR(10),
- Admin TINYINT(1) DEFAULT 0,
- Balance NUMERIC DEFAULT 0);"""
-)
-print("profile table created!!")
+    """CREATE TABLE IF NOT EXISTS BANK
+(
+BRANCH_ID VARCHAR(3) PRIMARY KEY,
+NAME VARCHAR(20),
+LOCATION VARCHAR(10),
+ADMINISTRATOR INT
+);""")
 
 mycursor.execute(
-    """CREATE TABLE IF NOT EXISTS transactions(prID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-                 FromAc VARCHAR(10),
-                 ToAc VARCHAR(10),
-                 Amount NUMERIC,
-                 DOT DATE,
-                 Remarks VARCHAR(250));"""
-)
-print("transactions table created!!")
-
+"""
+CREATE TABLE IF NOT EXISTS PERSON
+(
+PERSON_ID INT PRIMARY KEY AUTO_INCREMENT,
+NAME VARCHAR(30),
+GENDER CHAR(1),
+ADDRESS VARCHAR(50),
+DOB DATE
+);
+""")
 
 mycursor.execute(
-    f"INSERT IGNORE INTO profile(Name,DOB,Nationality,Password,City,Address,username,AcType,Caste,MobileNo,Gender,Admin) VALUES('Admin','2000-01-01','IN','pass','Banglore','NIL','ADMIN','Staff','NIL','+091 123 456 7809','Male',1);"
+"""CREATE TABLE IF NOT EXISTS ACCOUNT
+(
+ACCOUNT_NO INT PRIMARY KEY AUTO_INCREMENT,
+BALANCE INT,
+ACCOUNT_TYPE CHAR(1),
+MOBILE INT,
+BRANCH_ID VARCHAR(3),
+ADMINISTRATOR CHAR(1),
+PERSON_ID INT,
+FOREIGN KEY (PERSON_ID) REFERENCES PERSON(PERSON_ID) ON DELETE CASCADE,
+FOREIGN KEY (BRANCH_ID) REFERENCES BANK(BRANCH_ID) ON DELETE CASCADE
+);"""
 )
+
+mycursor.execute(
+"""CREATE TABLE IF NOT EXISTS LOGIN_INFO
+(
+USERNAME VARCHAR(20),
+PASSWORD VARCHAR(20),
+ACCOUNT_NO INT,
+PRIMARY KEY(ACCOUNT_NO,USERNAME),
+FOREIGN KEY(ACCOUNT_NO) REFERENCES ACCOUNT(ACCOUNT_NO) ON DELETE CASCADE
+);"""
+)
+mycursor.execute(
+"""
+CREATE TABLE IF NOT EXISTS LOAN(
+LOAN_ID INT PRIMARY KEY AUTO_INCREMENT,
+TOTAL_AMOUNT INT,
+INTREST INT,
+AMOUNT_LEFT INT,
+OFFERED_BY VARCHAR(3),
+OFFERED_TO INT,
+FOREIGN KEY(OFFERED_BY) REFERENCES BANK(BRANCH_ID) ON DELETE CASCADE,
+FOREIGN KEY(OFFERED_TO) REFERENCES ACCOUNT(ACCOUNT_NO) ON DELETE CASCADE
+);""")
+
+mycursor.execute("""
+CREATE TABLE IF NOT EXISTS TRANSACTIONS
+(
+TRANSACTION_ID INT PRIMARY KEY AUTO_INCREMENT,
+AMOUNT INT,
+TRANSACTION_DATE DATE,
+REMARKS VARCHAR(50),
+TO_ACC INT,
+FROM_ACC INT,
+FOREIGN KEY (TO_ACC) REFERENCES ACCOUNT(ACCOUNT_NO) ON DELETE SET NULL,
+FOREIGN KEY(FROM_ACC) REFERENCES ACCOUNT(ACCOUNT_NO) ON DELETE SET NULL
+);"""
+)
+
+for file in ["BANK", "PERSON", "ACCOUNT", "LOGIN_INFO", "LOAN", "TRANSACTIONS"]:
+    print("Inserting >>>>>", file)
+    mycursor.execute(f'''
+LOAD DATA LOCAL INFILE "{os.path.join(".","mockData",file+".csv")}"
+INTO TABLE {file}
+FIELDS TERMINATED BY ","
+IGNORE 1 ROWS;
+''')
 
 db.commit()
 with open("DB_DATA.txt", "w") as dbData:
     dbData.write(f"{host},{rootUser},{rootPass},BANK")
 
 mycursor.execute("SET @@global.sql_mode= '';")
+
 print(
     """
-AcNo (admin) : admin
-Passwd : pass
+AcNo (9) : admin
+Passwd : admin
 """
 )
+

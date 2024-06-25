@@ -1,1 +1,1 @@
-localhost,root,bambh0le,BANK
+localhost,root,root,BANK

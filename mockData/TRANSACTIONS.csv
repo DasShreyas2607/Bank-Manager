@@ -1,0 +1,1001 @@
+TRANSACTION_ID,AMOUNT,TRANSACTION_DATE,REMARKS,TO_ACC,FROM_ACC
+1,1471,2023-10-24,Lid Coffeecup 12oz D9542b,561,840
+2,6381,2024-01-24,"Bread - Crumbs, Bulk",782,189
+3,1062,2024-01-04,Capon - Whole,857,745
+4,8395,2024-05-31,Irish Cream - Butterscotch,204,877
+5,5260,2023-10-22,"Cod - Salted, Boneless",437,266
+6,8192,2024-06-16,Corn Syrup,226,887
+7,8264,2023-11-08,Flour - Pastry,360,549
+8,2626,2023-11-11,Island Oasis - Sweet And Sour Mix,716,12
+9,5838,2023-09-25,Wine - Coteaux Du Tricastin Ac,132,221
+10,6358,2024-01-08,"Lemonade - Island Tea, 591 Ml",846,483
+11,6520,2023-12-28,Food Colouring - Red,406,219
+12,8424,2023-12-21,Butter Sweet,223,753
+13,7032,2023-06-25,"Wine - Red, Gamay Noir",919,344
+14,3130,2024-01-04,Soup Campbells Split Pea And Ham,260,816
+15,8676,2023-07-03,Mackerel Whole Fresh,604,724
+16,6373,2023-07-15,Shrimp - Black Tiger 8 - 12,749,377
+17,4278,2023-08-24,"Sauce - Soya, Dark",909,737
+18,4773,2023-12-31,Tequila Rose Cream Liquor,462,590
+19,2185,2024-06-22,Cheese - Pied De Vents,581,69
+20,9299,2023-10-21,Cheese - Goat With Herbs,195,554
+21,2132,2024-03-20,Foil - 4oz Custard Cup,23,290
+22,3438,2024-05-04,Sweet Pea Sprouts,727,101
+23,3709,2023-09-23,"C - Plus, Orange",269,772
+24,1158,2023-07-07,Pepper - Gypsy Pepper,540,699
+25,9844,2024-05-28,Pancetta,290,680
+26,5162,2023-08-15,Soap - Mr.clean Floor Soap,78,54
+27,8528,2024-03-19,Wakami Seaweed,415,174
+28,5908,2023-07-03,Beef - Ground Lean Fresh,630,26
+29,1866,2023-08-30,Garlic Powder,599,255
+30,4276,2024-03-20,"Sauce - Apple, Unsweetened",556,22
+31,4934,2024-01-07,Durian Fruit,334,220
+32,6443,2024-05-26,Salt - Seasoned,57,601
+33,1071,2023-12-01,"Mushroom - Shitake, Dry",143,784
+34,8464,2023-07-14,"Butter - Salted, Micro",227,674
+35,8951,2023-08-28,Lime Cordial - Roses,447,982
+36,6453,2023-07-23,"Potatoes - Yukon Gold, 80 Ct",602,684
+37,1982,2023-09-22,Ginsing - Fresh,242,617
+38,8530,2023-10-11,Tea - Orange Pekoe,5,607
+39,8549,2024-02-29,"Beef - Tenderlion, Center Cut",644,825
+40,6535,2023-07-25,Truffle - Whole Black Peeled,744,305
+41,7706,2023-11-06,Squid - Tubes / Tenticles 10/20,570,121
+42,7519,2023-08-23,Banana Turning,172,470
+43,8032,2023-09-08,Saskatoon Berries - Frozen,930,518
+44,6947,2024-02-12,Hog / Sausage Casing - Pork,227,97
+45,2147,2023-07-01,Milkettes - 2%,907,624
+46,5230,2023-09-30,Tart - Lemon,892,188
+47,8833,2024-06-21,Beer - Sleeman Fine Porter,382,756
+48,4390,2023-06-28,Tomato Paste,492,123
+49,4209,2023-11-05,Banana Turning,748,149
+50,7833,2023-09-21,Pork - Inside,528,821
+51,5750,2023-12-16,"Bread - Bagels, Plain",338,132
+52,3870,2024-02-16,Aspic - Light,716,672
+53,9710,2024-01-10,Extract - Rum,147,239
+54,1838,2024-04-17,Beets - Pickled,824,344
+55,2246,2023-12-12,Chocolate - Sugar Free Semi Choc,526,612
+56,1579,2023-12-22,Cheese - Mix,485,889
+57,5479,2024-02-11,Oats Large Flake,982,105
+58,8895,2024-03-02,Wine - Beringer Founders Estate,134,410
+59,4247,2024-01-22,Shallots,165,854
+60,5626,2023-09-02,Yogurt - Plain,702,13
+61,9105,2023-07-29,Jello - Assorted,315,935
+62,7830,2023-08-02,Brandy Cherry - Mcguinness,281,117
+63,4898,2024-06-17,"Turkey - Breast, Boneless Sk On",38,557
+64,8044,2024-01-22,Nut - Macadamia,274,719
+65,6451,2023-07-17,Tomatoes - Roma,575,371
+66,3848,2024-04-05,"Pork - Tenderloin, Frozen",746,232
+67,2316,2024-02-29,Sauce - Fish 25 Ozf Bottle,393,267
+68,2271,2024-05-08,Plastic Arrow Stir Stick,819,571
+69,3966,2024-05-06,Onions - Red,620,995
+70,1660,2024-04-14,French Pastries,718,688
+71,9733,2023-11-26,Smoked Tongue,549,180
+72,2262,2023-12-29,Pimento - Canned,471,541
+73,6319,2023-09-08,Lobster - Canned Premium,674,922
+74,6445,2023-11-08,Pastry - Butterscotch Baked,341,290
+75,6928,2024-04-23,Country Roll,45,551
+76,8179,2023-11-30,Croissants Thaw And Serve,509,113
+77,2852,2023-08-22,Soupcontfoam16oz 116con,540,699
+78,2406,2023-10-24,Pike - Frozen Fillet,939,484
+79,4562,2023-12-28,Cake - Night And Day Choclate,399,366
+80,6025,2023-07-19,"Glass - Wine, Plastic, Clear 5 Oz",732,230
+81,7851,2023-07-02,Wine - Stoneliegh Sauvignon,378,753
+82,1322,2023-09-22,Butcher Twine 4r,286,483
+83,4887,2024-02-01,Shrimp - Tiger 21/25,923,971
+84,5986,2024-06-17,"Pork - Back, Short Cut, Boneless",694,469
+85,3890,2024-04-11,Mahi Mahi,71,664
+86,6343,2023-06-28,Pastry - Cheese Baked Scones,830,394
+87,9794,2023-11-12,Dish Towel,308,782
+88,2510,2024-06-01,Venison - Liver,857,228
+89,6949,2024-06-08,"Nut - Almond, Blanched, Sliced",95,848
+90,3112,2023-10-24,Pastry - Baked Scones - Mini,389,679
+91,9806,2023-08-23,Pasta - Ravioli,630,212
+92,2258,2023-09-06,Oven Mitts 17 Inch,806,490
+93,1052,2024-05-18,Truffle Shells - Semi - Sweet,819,773
+94,8955,2024-03-16,Wine - Baron De Rothschild,782,529
+95,2717,2023-08-30,Island Oasis - Banana Daiquiri,650,760
+96,9936,2023-08-08,Bread - Calabrese Baguette,128,759
+97,6014,2023-10-02,Sauce - Cranberry,966,995
+98,7087,2023-09-09,Onions - Pearl,804,496
+99,4457,2023-06-25,Chicken Thigh - Bone Out,203,116
+100,7660,2024-01-04,Muffin - Mix - Strawberry Rhubarb,977,259
+101,7392,2024-05-23,Cinnamon - Stick,189,131
+102,9315,2023-11-13,Horseradish Root,610,814
+103,5644,2024-01-31,Table Cloth 91x91 Colour,705,948
+104,3468,2023-07-25,"Appetizer - Spring Roll, Veg",551,934
+105,9740,2023-10-18,Beer - Rickards Red,31,721
+106,4514,2024-01-16,Wine - Sake,62,509
+107,4068,2023-12-27,"Veal - Brisket, Provimi,bnls",144,847
+108,7549,2023-11-20,Catfish - Fillets,959,710
+109,7680,2024-04-24,"Radish - Black, Winter, Organic",526,64
+110,4272,2023-11-16,Wine - Rosso Toscano Igt,501,58
+111,1117,2023-09-07,Wine - Two Oceans Cabernet,710,596
+112,3399,2024-06-02,Chip - Potato Dill Pickle,653,299
+113,4109,2023-07-28,Milk - Skim,197,334
+114,7063,2023-09-19,Squid U5 - Thailand,141,29
+115,8485,2024-03-03,Blueberries,775,901
+116,6232,2024-01-08,Foil Wrap,797,104
+117,2099,2024-04-19,Bacardi Breezer - Tropical,883,432
+118,6536,2024-04-01,Rabbit - Legs,1000,950
+119,8511,2023-10-28,Coffee Swiss Choc Almond,50,833
+120,5192,2024-04-03,Flour - Semolina,791,291
+121,6104,2024-02-26,Pork - Smoked Back Bacon,810,170
+122,5218,2024-02-07,Lamb - Whole Head Off,760,346
+123,4520,2024-03-01,"Oil - Food, Lacquer Spray",920,404
+124,5287,2024-05-23,Island Oasis - Mango Daiquiri,970,682
+125,9970,2023-07-02,Foam Cup 6 Oz,147,179
+126,1893,2024-02-20,Wine - Redchard Merritt,674,960
+127,1950,2023-10-15,Jerusalem Artichoke,911,222
+128,7363,2023-09-02,Waffle Stix,667,603
+129,4021,2023-07-17,"7up Diet, 355 Ml",425,332
+130,4954,2023-06-26,Pernod,202,148
+131,2586,2024-06-17,Foam Dinner Plate,728,727
+132,3757,2023-07-23,Pancetta,558,125
+133,7036,2023-08-29,Sea Bass - Whole,845,586
+134,9280,2024-03-21,Cilantro / Coriander - Fresh,701,340
+135,3343,2024-05-12,"Chicken - Leg, Fresh",650,574
+136,9637,2024-01-16,Wine - Puligny Montrachet A.,552,811
+137,2733,2023-10-22,Foil Wrap,584,318
+138,2388,2023-09-03,Durian Fruit,674,964
+139,7970,2024-05-03,Kippers - Smoked,771,24
+140,1299,2023-09-16,Wine - Chablis 2003 Champs,138,234
+141,3343,2023-06-26,Filling - Mince Meat,876,113
+142,7133,2024-06-19,Eggplant Italian,230,908
+143,4303,2024-05-19,Magnotta Bel Paese Red,848,631
+144,7510,2024-05-08,Lobster - Tail 6 Oz,309,825
+145,4004,2024-05-26,"Shrimp - Baby, Cold Water",920,260
+146,3142,2023-12-28,Tea - Herbal I Love Lemon,499,826
+147,4486,2023-09-08,Chicken - Ground,858,792
+148,6054,2023-07-12,"Butter - Salted, Micro",850,777
+149,8802,2023-08-14,Foam Cup 6 Oz,459,659
+150,9857,2024-04-05,"Coffee - Beans, Whole",768,628
+151,4596,2024-04-12,"Wine - Cahors Ac 2000, Clos",987,50
+152,3650,2024-06-16,Cake Sheet Combo Party Pack,378,309
+153,5784,2024-05-27,"Garlic - Primerba, Paste",184,854
+154,9424,2023-11-25,"Schnappes - Peach, Walkers",760,579
+155,4454,2023-11-15,"Tomatoes - Cherry, Yellow",240,991
+156,4504,2024-05-12,Gelatine Powder,6,348
+157,7075,2023-10-26,Campari,789,778
+158,8556,2023-11-10,Chips - Miss Vickies,736,323
+159,1142,2024-03-26,Bread Base - Italian,326,917
+160,5985,2024-05-21,Soup - Campbells Bean Medley,394,978
+161,9816,2024-03-10,Wine - Saint Emilion Calvet,676,759
+162,3192,2023-11-17,Soup - French Can Pea,657,675
+163,1867,2023-11-18,Nantucket Pine Orangebanana,395,270
+164,2785,2024-04-03,Onions - Spanish,54,814
+165,4689,2023-07-15,"Chilli Paste, Hot Sambal Oelek",540,328
+166,9974,2023-11-26,"Sparkling Wine - Rose, Freixenet",659,721
+167,3528,2023-12-21,"Mushrooms - Black, Dried",895,8
+168,4049,2024-01-03,Sprouts - Pea,76,719
+169,5460,2024-06-10,Cakes Assorted,186,407
+170,1307,2024-05-06,"Tart Shells - Sweet, 3",191,877
+171,2060,2023-11-11,Tea - Green,69,574
+172,9544,2024-06-19,Wine - Pinot Noir Mondavi Coastal,815,406
+173,9205,2024-05-10,"Appetizer - Spring Roll, Veg",262,759
+174,9811,2023-10-26,Bread - Corn Muffaletta,735,581
+175,5968,2024-01-30,Milk Powder,276,204
+176,3590,2024-04-22,Beer - Mill St Organic,607,764
+177,1919,2024-01-04,Cookie Dough - Oatmeal Rasin,855,206
+178,1207,2023-09-03,Tia Maria,688,474
+179,2151,2024-02-29,Cookie Dough - Oatmeal Rasin,956,90
+180,1694,2024-04-16,Lamb Rack Frenched Australian,311,535
+181,8834,2024-04-15,"Wine - Red, Gallo, Merlot",725,101
+182,4120,2024-03-30,"Cheese - Manchego, Spanish",797,760
+183,5464,2024-03-05,"Sparkling Wine - Rose, Freixenet",397,789
+184,9564,2024-03-24,Wine - Montecillo Rioja Crianza,845,584
+185,1298,2023-08-15,"Juice - V8, Tomato",320,195
+186,3945,2024-06-18,"Veal - Shank, Pieces",347,89
+187,4253,2024-03-25,Sauce - Oyster,807,839
+188,5302,2023-09-26,Mayonnaise - Individual Pkg,379,988
+189,8514,2023-09-27,Wine - Cave Springs Dry Riesling,240,185
+190,1643,2024-02-06,"Veal - Brisket, Provimi, Bone - In",606,288
+191,8154,2024-01-05,Zucchini - Green,458,12
+192,2947,2024-05-02,Miso - Soy Bean Paste,157,358
+193,4549,2024-04-08,"Yogurt - Banana, 175 Gr",224,807
+194,1366,2024-05-20,White Baguette,853,663
+195,7300,2023-09-19,Watercress,317,170
+196,3438,2023-09-27,Crackers - Water,814,252
+197,4185,2023-12-31,Pastry - Baked Cinnamon Stick,322,237
+198,4284,2023-07-05,Pork Loin Bine - In Frenched,641,728
+199,3464,2023-10-05,Beer - True North Lager,892,219
+200,5769,2023-09-13,"Stock - Veal, Brown",390,852
+201,5697,2024-02-16,Pepper - Cubanelle,622,549
+202,5233,2024-03-27,Wine - Lou Black Shiraz,771,665
+203,1575,2023-12-21,"Carrots - Mini, Stem On",407,641
+204,7850,2024-05-03,Bread - Raisin Walnut Pull,900,850
+205,2410,2023-08-05,Swordfish Loin Portions,386,960
+206,3833,2023-07-13,"Lid - Translucent, 3.5 And 6 Oz",51,135
+207,5734,2023-07-14,Apple - Macintosh,284,856
+208,9314,2023-12-28,Potatoes - Idaho 100 Count,705,772
+209,3294,2023-09-17,Lettuce - Boston Bib,835,68
+210,7663,2023-10-01,Brandy Apricot,600,605
+211,5056,2024-02-19,Pimento - Canned,6,43
+212,5507,2023-11-28,Aspic - Clear,877,393
+213,8297,2024-03-26,Pork - European Side Bacon,16,163
+214,3079,2024-02-22,Crab Brie In Phyllo,554,226
+215,2269,2023-09-14,Cookie Double Choco,820,92
+216,5124,2023-10-22,"Bread - Pumpernickle, Rounds",178,124
+217,5775,2024-03-20,Nantucket - Pomegranate Pear,296,733
+218,7845,2024-06-01,Capicola - Hot,213,871
+219,7826,2024-04-17,Oil - Macadamia,151,503
+220,6572,2023-10-25,Sugar - Brown,423,794
+221,3359,2023-09-23,Fruit Salad Deluxe,95,418
+222,1778,2024-04-15,Ice Cream - Strawberry,157,762
+223,9496,2023-08-28,Lettuce - Boston Bib,447,157
+224,4061,2023-08-09,Filter - Coffee,604,512
+225,6942,2023-10-11,"Salmon - Atlantic, Skin On",532,116
+226,4817,2023-12-27,Pasta - Angel Hair,525,332
+227,2947,2023-08-27,Mackerel Whole Fresh,8,958
+228,3603,2024-03-19,Pineapple - Golden,94,917
+229,8344,2024-05-11,Wine - Rhine Riesling Wolf Blass,853,420
+230,9330,2023-12-22,Soup - Campbells Mushroom,581,984
+231,7868,2024-05-12,Irish Cream - Baileys,919,477
+232,7266,2024-06-24,"Trout - Rainbow, Fresh",33,215
+233,4438,2023-09-09,Pail For Lid 1537,230,840
+234,9404,2024-04-19,Mushroom - White Button,537,214
+235,9287,2023-07-10,"Chicken - Breast, 5 - 7 Oz",763,405
+236,9666,2024-04-26,Plastic Arrow Stir Stick,718,892
+237,8691,2024-01-03,Papayas,671,254
+238,6214,2023-10-01,Ice Cream - Life Savers,102,906
+239,2018,2024-02-13,Chicken - Whole,285,948
+240,6204,2024-04-13,Tea - Camomele,943,204
+241,5243,2023-07-22,"Mushroom - Porcini, Dry",890,402
+242,3206,2024-01-29,Wine - White Cab Sauv.on,164,344
+243,9786,2024-01-13,Pepper - Red Chili,75,729
+244,8532,2024-05-29,Cookie Double Choco,546,590
+245,6015,2024-04-12,Juice - Cranberry 284ml,874,873
+246,7705,2024-02-21,Bar Special K,343,164
+247,4188,2024-03-04,Energy Drink - Franks Pineapple,336,11
+248,3198,2023-07-02,Mushroom Morel Fresh,927,303
+249,8075,2023-08-12,Hummus - Spread,822,671
+250,2775,2023-08-20,Pork - European Side Bacon,247,712
+251,8828,2023-09-03,Squash - Guords,622,203
+252,7187,2023-12-03,Cumin - Ground,355,414
+253,7920,2023-12-15,"Nut - Almond, Blanched, Ground",283,946
+254,1395,2023-09-11,Appetizer - Assorted Box,406,456
+255,6741,2023-09-18,Bread - Burger,139,155
+256,8258,2023-10-19,Apricots Fresh,874,729
+257,6875,2024-05-08,"Turkey - Breast, Smoked",561,923
+258,8617,2023-11-17,Island Oasis - Cappucino Mix,783,813
+259,3770,2023-07-22,Kellogs All Bran Bars,917,103
+260,1907,2024-05-17,"Fish - Halibut, Cold Smoked",223,707
+261,1300,2023-12-15,Shrimp - 31/40,417,188
+262,5902,2024-04-03,Cheese - Grana Padano,504,737
+263,2366,2024-05-11,Wine - Guy Sage Touraine,914,562
+264,1682,2024-03-07,Curry Powder Madras,284,164
+265,3848,2024-01-18,Plasticforkblack,260,744
+266,9879,2024-05-27,Tea Peppermint,276,955
+267,4098,2023-07-31,Apple - Custard,157,118
+268,6668,2024-04-10,Beef - Prime Rib Aaa,157,576
+269,6051,2023-10-01,Plasticforkblack,706,578
+270,4028,2024-02-03,Cleaner - Bleach,41,770
+271,3634,2024-04-15,Cheese - Oka,444,213
+272,8450,2024-04-08,Beer - True North Strong Ale,364,474
+273,7001,2023-10-21,Smirnoff Green Apple Twist,927,176
+274,9864,2024-04-22,Turkey Leg With Drum And Thigh,450,601
+275,4747,2024-05-13,Carrots - Jumbo,232,954
+276,3691,2023-09-06,Towel Multifold,442,539
+277,3691,2023-12-07,"Cheese - Cheddar, Mild",138,963
+278,4173,2023-10-10,Wine - Chardonnay Mondavi,532,578
+279,1369,2024-03-01,Tobasco Sauce,783,542
+280,8514,2024-01-10,Cheese - Mozzarella,569,713
+281,8340,2024-03-17,"Sauce - Gravy, Au Jus, Mix",609,548
+282,3068,2024-06-03,Cheese - Cheddarsliced,945,608
+283,2291,2024-06-12,Muffin - Banana Nut Individual,137,764
+284,7474,2023-12-10,Calvados - Boulard,215,725
+285,1519,2024-06-17,Lamb - Bones,778,765
+286,1701,2023-10-14,Rum - Mount Gay Eclipes,222,951
+287,5739,2023-11-28,Smoked Tongue,722,263
+288,6417,2024-04-12,"Veal - Brisket, Provimi,bnls",898,142
+289,2741,2023-07-28,Bagel - 12 Grain Preslice,729,873
+290,3021,2023-09-05,"Beef - Rib Roast, Cap On",158,438
+291,1028,2024-02-21,Vaccum Bag - 14x20,808,849
+292,7971,2023-11-15,Pork - Smoked Kassler,546,748
+293,1292,2023-07-01,Bread - Assorted Rolls,70,882
+294,8127,2023-10-26,Figs,38,599
+295,7916,2024-05-24,Table Cloth 53x53 White,648,68
+296,5423,2024-01-09,"Pasta - Lasagne, Fresh",494,418
+297,9838,2023-07-18,Bread - Pain Au Liat X12,803,121
+298,8437,2024-06-12,Calvados - Boulard,482,732
+299,6857,2023-10-19,Transfer Sheets,84,852
+300,7590,2024-02-04,"Club Soda - Schweppes, 355 Ml",208,640
+301,4514,2024-01-31,Beef - Cow Feet Split,311,557
+302,7287,2023-09-14,Hagen Daza - Dk Choocolate,528,54
+303,5974,2023-07-23,Flower - Commercial Bronze,201,109
+304,3247,2023-08-30,Soup - Campbells - Chicken Noodle,440,185
+305,5987,2024-04-25,Sobe - Lizard Fuel,165,546
+306,3102,2023-11-11,Wine - Chianti Classica Docg,707,921
+307,3491,2023-12-24,Lettuce - Lolla Rosa,406,659
+308,9249,2024-03-11,Cheese - La Sauvagine,459,30
+309,4071,2023-12-02,Sour Puss Raspberry,669,134
+310,4993,2023-09-06,"Pasta - Penne, Lisce, Dry",744,789
+311,7429,2023-07-05,Nut - Pumpkin Seeds,376,801
+312,3824,2023-12-04,Bacardi Limon,230,831
+313,1437,2023-12-08,Versatainer Nc - 9388,921,764
+314,9183,2023-08-26,Shark - Loin,242,457
+315,1326,2024-06-04,Wine - Chateau Bonnet,772,652
+316,7982,2024-05-28,Ice Cream Bar - Hagen Daz,707,515
+317,5739,2024-06-11,Island Oasis - Lemonade,357,127
+318,4599,2023-10-26,Squid - U 5,942,922
+319,5316,2023-10-05,Coffee Cup 16oz Foam,569,671
+320,6683,2023-08-27,Honey - Comb,181,657
+321,4241,2024-04-15,Pineapple - Regular,278,423
+322,4087,2023-07-22,Turkey - Oven Roast Breast,45,174
+323,6492,2024-06-13,"Chocolate - Milk, Callets",315,346
+324,9058,2023-10-22,Vodka - Smirnoff,629,21
+325,9463,2024-02-21,Cheese - Parmigiano Reggiano,45,759
+326,2695,2024-04-27,Honey - Liquid,670,937
+327,7239,2023-09-08,Turkey - Ground. Lean,678,453
+328,1594,2024-03-24,Cake - Dulce De Leche,246,6
+329,2965,2024-01-13,"Yogurt - Blueberry, 175 Gr",880,919
+330,1188,2024-05-01,Blackberries,713,449
+331,8614,2023-12-21,Caviar - Salmon,587,296
+332,1695,2024-05-11,Pepper - Cubanelle,263,659
+333,5966,2023-10-23,Beef - Ground Lean Fresh,36,939
+334,5968,2024-02-17,Dasheen,203,579
+335,1990,2024-05-07,Water - Perrier,869,325
+336,1405,2024-06-12,Puree - Guava,641,247
+337,6358,2023-06-27,Pop Shoppe Cream Soda,759,29
+338,8602,2023-11-12,"Fish - Atlantic Salmon, Cold",290,788
+339,2877,2024-02-01,Cheese - St. Andre,274,27
+340,5968,2024-02-28,Caviar - Salmon,593,55
+341,9502,2023-07-17,Wine - Pinot Noir Pond Haddock,151,748
+342,7556,2024-02-12,"Lamb - Loin, Trimmed, Boneless",224,7
+343,8013,2024-03-12,"Melon - Watermelon, Seedless",176,950
+344,1769,2023-11-29,"Mushroom - Enoki, Dry",90,540
+345,2676,2023-10-08,Sauce - Balsamic Viniagrette,866,315
+346,6127,2023-06-28,Nori Sea Weed - Gold Label,393,54
+347,9385,2023-07-21,Lemonade - Pineapple Passion,285,796
+348,2502,2023-10-01,"Chicken - Thigh, Bone In",9,572
+349,7030,2023-09-27,Graham Cracker Mix,175,558
+350,1699,2024-02-28,Mousse - Mango,514,539
+351,4657,2024-03-24,Fond - Neutral,808,459
+352,2148,2023-11-28,Ham - Cooked Bayonne Tinned,86,170
+353,7162,2023-08-11,Tea - English Breakfast,892,24
+354,8142,2023-10-08,"Hickory Smoke, Liquid",528,106
+355,2368,2023-07-03,Lotus Root,740,207
+356,8253,2023-12-10,Coffee - Egg Nog Capuccino,612,34
+357,7672,2023-12-17,Chocolate - Compound Coating,100,2
+358,5594,2024-06-17,"Asparagus - White, Fresh",285,226
+359,9057,2024-02-26,Eggplant - Asian,214,750
+360,3174,2023-10-20,Cheese - Victor Et Berthold,882,327
+361,1949,2023-10-25,Vinegar - Balsamic,184,793
+362,3838,2024-02-10,Pineapple - Regular,654,957
+363,8155,2024-02-08,Cake Slab,155,676
+364,1511,2024-01-29,Pastry - Apple Muffins - Mini,343,360
+365,3163,2023-09-08,"Pasta - Rotini, Dry",587,434
+366,5932,2023-08-07,Chocolate - White,710,380
+367,2934,2023-10-16,Veal - Liver,382,42
+368,6009,2024-06-15,Bread Cranberry Foccacia,353,704
+369,6907,2024-01-14,Anisette - Mcguiness,728,300
+370,2675,2024-01-03,Puree - Guava,178,886
+371,5757,2024-04-29,Cake - Cheese Cake 9 Inch,885,193
+372,1076,2024-03-04,"Squash - Pattypan, Yellow",750,688
+373,2677,2024-03-28,"Mushroom - Chantrelle, Fresh",704,770
+374,3314,2024-06-02,Lettuce - Belgian Endive,537,851
+375,4626,2024-06-06,Scrubbie - Scotchbrite Hand Pad,247,503
+376,6740,2023-06-28,Cookie Double Choco,568,900
+377,5556,2023-12-14,Lamb - Whole Head Off,50,107
+378,1605,2023-07-11,Lid - 16 Oz And 32 Oz,149,938
+379,7771,2023-10-20,"Plate - Foam, Bread And Butter",365,500
+380,8818,2023-08-17,Tart - Lemon,538,99
+381,6316,2023-07-31,Long Island Ice Tea,800,124
+382,1103,2023-12-27,Chicken - Whole Fryers,46,341
+383,8938,2024-01-08,Gingerale - Diet - Schweppes,703,160
+384,1522,2023-10-17,"Loaf Pan - 2 Lb, Foil",397,691
+385,3669,2023-09-03,Curry Paste - Green Masala,283,149
+386,9315,2024-03-03,"Crab - Dungeness, Whole, live",910,465
+387,3385,2024-01-10,Bread - Focaccia Quarter,616,151
+388,5342,2024-03-27,Creme De Cacao White,745,781
+389,1242,2023-07-23,Beef - Short Ribs,935,134
+390,5501,2023-08-13,Lotus Root,963,709
+391,6274,2024-02-11,Cherries - Frozen,884,246
+392,9506,2023-07-30,"Orange - Canned, Mandarin",389,414
+393,6556,2024-01-12,"Wine - White, Riesling, Semi - Dry",216,892
+394,1437,2024-02-05,Beans - Soya Bean,406,509
+395,5962,2024-03-11,Salmon - Sockeye Raw,199,163
+396,8757,2024-06-12,Wine - Fat Bastard Merlot,246,699
+397,7134,2023-11-25,Swiss Chard - Red,625,182
+398,1047,2024-04-30,Swordfish Loin Portions,848,199
+399,9000,2023-11-09,"Pasta - Penne, Rigate, Dry",738,60
+400,6404,2024-04-25,Caviar - Salmon,407,151
+401,8373,2023-12-06,Mousse - Passion Fruit,296,477
+402,9363,2024-05-07,Burger Veggie,779,803
+403,3603,2023-07-23,"Soup - Knorr, Classic Can. Chili",116,794
+404,7949,2023-10-18,Coffee - Irish Cream,950,231
+405,5827,2023-10-24,Cheese - St. Andre,737,720
+406,9191,2023-07-17,Sauce - Demi Glace,494,862
+407,5406,2024-01-21,Island Oasis - Banana Daiquiri,920,32
+408,7960,2024-04-21,Squeeze Bottle,392,407
+409,9576,2024-03-20,Rabbit - Saddles,608,666
+410,5754,2024-03-24,"Pepper - White, Ground",320,51
+411,5334,2024-02-09,Breakfast Quesadillas,658,12
+412,7977,2023-11-13,Onions - Red Pearl,718,585
+413,5284,2024-01-12,Eggwhite Frozen,559,472
+414,5352,2023-08-15,Goulash Seasoning,673,328
+415,3121,2024-03-30,Bulgar,573,23
+416,5533,2023-08-16,Sun - Dried Tomatoes,498,679
+417,8294,2024-02-23,"Fish - Scallops, Cold Smoked",830,75
+418,3055,2023-09-12,Meldea Green Tea Liquor,965,541
+419,7462,2023-08-30,Tarragon - Fresh,996,999
+420,5495,2023-09-17,Wine - Fume Blanc Fetzer,792,949
+421,2586,2023-12-20,Garam Marsala,133,434
+422,6219,2024-02-12,Island Oasis - Strawberry,191,685
+423,7697,2024-02-28,Shallots,883,872
+424,3257,2023-10-27,Sea Bass - Whole,226,703
+425,2059,2024-02-16,"Loaf Pan - 2 Lb, Foil",492,248
+426,1169,2024-05-12,Containter - 3oz Microwave Rect.,479,93
+427,2730,2023-07-29,Sloe Gin - Mcguinness,457,277
+428,5717,2024-01-16,Wine - Shiraz South Eastern,356,898
+429,4982,2023-12-11,Jerusalem Artichoke,348,215
+430,6485,2023-09-24,Chervil - Fresh,432,765
+431,1907,2023-12-04,"Red Snapper - Fresh, Whole",114,840
+432,6384,2023-07-23,Vinegar - Champagne,373,500
+433,3273,2024-06-20,Muffin - Mix - Mango Sour Cherry,535,94
+434,3572,2024-01-08,Black Currants,183,470
+435,3231,2024-01-30,Sauce - Hollandaise,744,319
+436,5904,2024-01-05,Wine - Pinot Noir Latour,99,510
+437,9505,2023-11-06,"Rum - Spiced, Captain Morgan",925,68
+438,5322,2023-12-14,"Bread - Roll, Italian",925,643
+439,2605,2024-04-16,"Trout - Rainbow, Fresh",332,684
+440,6557,2024-03-17,Squid - Tubes / Tenticles 10/20,266,751
+441,4963,2024-05-11,Broccoli - Fresh,887,735
+442,7069,2024-04-19,Beef - Top Butt Aaa,187,915
+443,8363,2024-06-11,"Chicken - Base, Ultimate",221,216
+444,7656,2024-03-21,Pork - Smoked Kassler,761,953
+445,3586,2023-08-24,Corn - Mini,777,278
+446,9682,2023-12-28,"Chocolate - Pistoles, Lactee, Milk",344,111
+447,7328,2024-02-28,Bread - Wheat Baguette,981,610
+448,2755,2024-04-27,Island Oasis - Raspberry,323,568
+449,5634,2023-12-08,"Rosemary - Primerba, Paste",922,298
+450,7387,2024-03-05,Pork - Belly Fresh,538,944
+451,3461,2024-03-10,Rice - Wild,214,315
+452,2715,2023-08-15,Arizona - Plum Green Tea,674,816
+453,8682,2024-04-08,"Pork - Bacon, Double Smoked",215,316
+454,4086,2023-10-14,Peas - Frozen,824,297
+455,4369,2023-09-24,Wine - Toasted Head,549,338
+456,2011,2023-10-27,"Pasta - Elbows, Macaroni, Dry",636,264
+457,8531,2024-04-26,Uniform Linen Charge,800,79
+458,6765,2023-07-09,Sauce - Fish 25 Ozf Bottle,611,618
+459,5698,2023-09-23,Potatoes - Yukon Gold 5 Oz,985,311
+460,6547,2024-04-14,Steampan - Half Size Shallow,827,361
+461,3389,2023-08-17,Puree - Raspberry,873,354
+462,5170,2024-04-09,Laundry - Bag Cloth,696,236
+463,4750,2023-08-09,Wine - Prosecco Valdobiaddene,45,811
+464,6956,2024-04-24,Venison - Striploin,156,45
+465,5779,2024-04-24,Lettuce - Frisee,385,570
+466,5201,2023-10-26,Potatoes - Idaho 80 Count,328,752
+467,1976,2024-03-29,"Chicken - Diced, Cooked",152,519
+468,4390,2023-07-21,"Roe - Lump Fish, Red",219,965
+469,8045,2024-02-06,"Jam - Blackberry, 20 Ml Jar",167,339
+470,3184,2024-02-25,Cheese - Taleggio D.o.p.,15,542
+471,1395,2024-03-11,"Zucchini - Mini, Green",85,265
+472,2205,2023-12-23,Lettuce - Frisee,458,351
+473,1440,2023-12-27,Pepper - Pablano,61,507
+474,7449,2024-01-15,Bagel - 12 Grain Preslice,833,310
+475,7494,2023-08-07,"Wine - Cahors Ac 2000, Clos",552,72
+476,9043,2023-08-12,Corn Meal,596,341
+477,2694,2024-06-15,Hot Choc Vending,934,634
+478,4441,2023-09-26,"Vinegar - Balsamic, White",251,667
+479,3581,2024-05-07,Lemon Tarts,366,807
+480,7617,2023-07-04,Soup - Campbells Chili Veg,581,974
+481,8036,2024-05-18,"Cheese - Woolwich Goat, Log",292,464
+482,5948,2024-04-26,"Asparagus - White, Canned",13,415
+483,2305,2023-11-23,Bread - Pain Au Liat X12,41,721
+484,2660,2024-06-03,"Pepper - White, Whole",746,858
+485,9159,2023-10-15,Corn Kernels - Frozen,80,321
+486,3683,2023-06-25,Sauce - Cranberry,939,176
+487,5918,2024-01-25,Beer - Paulaner Hefeweisse,665,541
+488,1980,2023-08-05,Bar - Sweet And Salty Chocolate,232,727
+489,2411,2023-07-10,External Supplier,756,913
+490,9184,2023-10-07,"Sauce - Gravy, Au Jus, Mix",169,728
+491,8457,2023-12-31,"Split Peas - Green, Dry",578,645
+492,6424,2024-02-28,The Pop Shoppe Pinapple,594,40
+493,6784,2023-08-16,Snapple Raspberry Tea,472,844
+494,6045,2023-07-05,Beef - Ox Tongue,632,360
+495,7421,2024-02-05,"Trout - Rainbow, Fresh",788,584
+496,8361,2023-08-16,"Bread - Rolls, Corn",351,861
+497,2082,2024-03-21,Vaccum Bag - 14x20,285,627
+498,5900,2024-06-10,Bouillion - Fish,309,229
+499,4891,2023-07-11,Sobe - Orange Carrot,371,916
+500,1920,2023-10-19,"Club Soda - Schweppes, 355 Ml",76,967
+501,8274,2023-08-24,Energy Drink - Franks Original,539,775
+502,6294,2024-05-15,Peppercorns - Pink,417,585
+503,3195,2023-11-24,Veal - Provimi Inside,904,623
+504,5513,2023-10-30,Venison - Ground,582,356
+505,2205,2023-09-12,Puree - Passion Fruit,58,840
+506,5010,2024-01-01,Flour Dark Rye,741,540
+507,1283,2023-11-17,Tuna - Salad Premix,97,167
+508,2961,2023-10-22,Wooden Mop Handle,815,707
+509,5135,2024-03-09,Pork Ham Prager,858,58
+510,5761,2024-02-29,Cheese - Blue,449,104
+511,8315,2024-03-16,Paste - Black Olive,360,984
+512,5010,2024-06-13,Jolt Cola - Red Eye,77,79
+513,9045,2023-09-09,Carbonated Water - Blackcherry,33,749
+514,5092,2023-10-19,Yoplait Drink,551,387
+515,2899,2024-05-14,Cheese - Roquefort Pappillon,87,37
+516,1034,2023-10-25,Water - Spring Water 500ml,71,129
+517,5570,2024-02-01,Cheese - St. Paulin,297,947
+518,9854,2024-02-25,Island Oasis - Wildberry,948,189
+519,7069,2023-07-19,Juice Peach Nectar,940,525
+520,2468,2023-12-05,Tuna - Fresh,346,204
+521,1260,2023-11-19,Cleaner - Bleach,367,59
+522,7841,2024-06-14,Whmis Spray Bottle Graduated,112,512
+523,3500,2024-03-31,"Cheese - Cheddar, Old White",191,489
+524,6630,2023-07-10,Wine - Chablis 2003 Champs,805,221
+525,2959,2024-05-08,Lettuce - California Mix,216,540
+526,9535,2024-02-01,Bar Energy Chocchip,156,268
+527,7732,2024-03-01,Kippers - Smoked,238,791
+528,9862,2023-11-12,"Yogurt - Blueberry, 175 Gr",336,9
+529,6301,2023-11-26,"Wine - Red, Cabernet Sauvignon",308,264
+530,1154,2024-04-11,Nantucket - Kiwi Berry Cktl.,84,566
+531,8543,2023-09-18,Chocolate - Unsweetened,104,43
+532,1940,2023-10-09,"Veal - Shank, Pieces",625,642
+533,9662,2023-09-06,Squid U5 - Thailand,667,228
+534,1564,2024-01-12,Olives - Nicoise,84,12
+535,9183,2024-05-15,Compound - Strawberry,766,36
+536,6485,2024-02-15,Rabbit - Legs,451,243
+537,8180,2024-03-11,Passion Fruit,758,686
+538,5103,2023-07-08,"Jam - Strawberry, 20 Ml Jar",589,682
+539,7982,2024-06-06,Dawn Professionl Pot And Pan,834,498
+540,8514,2023-10-12,"Beans - Black Bean, Preserved",50,633
+541,2387,2024-02-12,Liners - Baking Cups,968,297
+542,3726,2024-02-05,Olives - Nicoise,440,234
+543,4194,2023-07-19,Propel Sport Drink,530,375
+544,8916,2024-04-06,Langers - Ruby Red Grapfruit,618,272
+545,8851,2024-01-18,Sole - Iqf,268,659
+546,5792,2023-06-27,Mace Ground,714,356
+547,5497,2024-05-01,"Beef - Tenderlion, Center Cut",742,880
+548,2207,2024-01-21,Longos - Grilled Salmon With Bbq,630,414
+549,5442,2024-06-12,Lettuce - Baby Salad Greens,424,760
+550,1081,2024-01-27,"Beef - Rouladin, Sliced",107,21
+551,3247,2024-03-25,"Carrots - Purple, Organic",504,41
+552,6672,2023-10-08,Fondant - Icing,550,79
+553,3608,2023-09-11,Sauce - Rosee,158,39
+554,2081,2024-01-11,Juice - Propel Sport,161,798
+555,8424,2023-11-13,Longos - Lasagna Veg,39,651
+556,4297,2023-12-21,Bread Base - Italian,462,578
+557,1432,2024-06-20,"Schnappes - Peach, Walkers",850,789
+558,1236,2024-02-23,Flour - Teff,851,403
+559,6108,2023-08-15,"Soup - Campbells, Classic Chix",938,375
+560,6083,2023-11-11,Pastry - French Mini Assorted,650,144
+561,2458,2023-07-22,"Veal - Insides, Grains",508,517
+562,4344,2024-05-16,Olives - Kalamata,543,473
+563,2702,2024-03-18,Cookie Dough - Chocolate Chip,453,36
+564,8469,2023-07-27,Energy - Boo - Koo,249,835
+565,7792,2024-01-23,"Oil - Shortening,liqud, Fry",108,540
+566,7083,2023-07-17,Papadam,608,94
+567,9202,2024-01-21,"Salmon - Atlantic, Fresh, Whole",343,777
+568,6505,2023-12-09,Oil - Pumpkinseed,687,296
+569,3237,2023-09-12,"Soup - Campbells, Lentil",499,912
+570,5341,2023-07-28,Pimento - Canned,571,695
+571,1382,2024-02-26,"Juice - Tomato, 10 Oz",743,454
+572,3186,2023-09-05,Longos - Grilled Salmon With Bbq,282,612
+573,9853,2023-07-22,"Marjoram - Dried, Rubbed",753,660
+574,3688,2023-08-22,Lid Coffee Cup 8oz Blk,536,840
+575,9978,2023-09-29,Bread - Frozen Basket Variety,996,253
+576,4079,2023-12-01,"Ecolab - Orange Frc, Cleaner",830,531
+577,6883,2024-06-01,Water - Tonic,938,963
+578,6847,2023-12-11,Wine - Vineland Estate Semi - Dry,359,479
+579,4683,2024-03-24,"Basil - Primerba, Paste",534,216
+580,7848,2023-08-03,"Asparagus - White, Canned",352,628
+581,8996,2023-11-28,Kumquat,87,391
+582,9924,2023-07-28,Mustard - Dijon,686,637
+583,9507,2023-10-02,Tea - English Breakfast,655,617
+584,4669,2023-09-30,Tobasco Sauce,658,932
+585,3218,2024-03-09,Bread Country Roll,576,185
+586,5468,2024-04-25,Juice - Apple 284ml,869,274
+587,9811,2023-12-02,Soup - Campbells Asian Noodle,34,614
+588,7993,2024-03-08,Hand Towel,853,348
+589,9174,2024-03-06,Spice - Greek 1 Step,351,459
+590,2200,2023-08-13,Turkey Leg With Drum And Thigh,986,827
+591,6463,2024-04-11,Tomato - Tricolor Cherry,58,476
+592,9813,2024-01-12,"Mushroom - Shitake, Dry",506,108
+593,1691,2023-10-15,Beets - Golden,131,435
+594,7039,2023-07-01,"Seedlings - Buckwheat, Organic",179,829
+595,9830,2024-05-10,Lemonade - Pineapple Passion,667,618
+596,8570,2024-05-11,Sage - Rubbed,500,597
+597,8099,2024-06-15,"Pork - Ham, Virginia",522,483
+598,4999,2024-04-26,Cheese - Brie,362,220
+599,8139,2023-09-28,Pastry - Apple Large,786,128
+600,7558,2023-09-15,Sauce - Oyster,15,792
+601,7644,2023-08-03,Relish,46,128
+602,2652,2024-05-04,Petite Baguette,439,79
+603,8218,2024-06-10,"Wine - Niagara,vqa Reisling",668,394
+604,6366,2024-04-29,Wonton Wrappers,659,359
+605,5145,2024-01-23,Spinach - Frozen,879,954
+606,8705,2023-11-26,Pasta - Orecchiette,688,684
+607,6622,2023-11-22,Water - Green Tea Refresher,261,577
+608,7816,2024-02-20,Bread - Italian Roll With Herbs,410,116
+609,2214,2024-01-23,"Beef - Ground, Extra Lean, Fresh",692,224
+610,3982,2024-06-24,Oil - Sesame,330,781
+611,5261,2024-04-07,Wheat - Soft Kernal Of Wheat,663,613
+612,8517,2024-06-16,Kirsch - Schloss,798,377
+613,7793,2023-08-09,"Pasta - Penne Primavera, Single",853,461
+614,1829,2023-10-13,Table Cloth 62x114 White,737,972
+615,4125,2023-07-12,"Bread - Sticks, Thin, Plain",538,130
+616,6647,2023-12-29,Beef - Ox Tongue,517,272
+617,2155,2024-04-28,Eel - Smoked,83,324
+618,5255,2023-12-22,Bread - Pumpernickel,725,655
+619,7122,2024-01-23,Mikes Hard Lemonade,650,680
+620,8975,2024-04-24,Lighter - Bbq,467,478
+621,8298,2024-06-05,"Wine - White, Chardonnay",553,648
+622,4336,2024-01-16,"Soup - French Onion, Dry",717,459
+623,4391,2024-03-28,Cake - Dulce De Leche,604,728
+624,8587,2024-04-17,Mussels - Cultivated,899,985
+625,9220,2023-07-31,Shrimp - Prawn,372,601
+626,1646,2023-10-24,Mangoes,786,538
+627,4216,2024-05-09,"Napkin - Dinner, White",723,258
+628,3299,2023-07-04,"Cheese - Havarti, Roasted Garlic",479,816
+629,4077,2024-05-05,Energy Drink - Franks Pineapple,792,139
+630,3688,2024-06-02,Tobasco Sauce,793,326
+631,2634,2024-04-08,Soup - French Onion,135,13
+632,8893,2023-10-03,Snapple Raspberry Tea,896,636
+633,1182,2024-01-02,Capers - Pickled,249,899
+634,6835,2023-12-30,Wine - Gato Negro Cabernet,15,6
+635,7771,2024-05-18,Kahlua,108,907
+636,5695,2023-07-12,Fennel,114,603
+637,7409,2023-07-17,Apple - Royal Gala,66,304
+638,7920,2024-03-18,Lemonade - Pineapple Passion,700,598
+639,7491,2024-05-14,Carbonated Water - Cherry,212,353
+640,3661,2023-09-06,Salmon - Sockeye Raw,450,269
+641,6967,2024-05-10,Anchovy Paste - 56 G Tube,904,209
+642,2704,2024-02-07,Mint - Fresh,223,278
+643,5692,2024-01-16,Longos - Cheese Tortellini,807,976
+644,6118,2024-01-17,Oil - Olive Bertolli,741,686
+645,6614,2024-02-24,Soup - Cream Of Broccoli,730,410
+646,3643,2023-09-14,Everfresh Products,887,863
+647,8665,2024-06-16,Canadian Emmenthal,364,399
+648,9994,2023-10-22,Bread Ww Cluster,141,671
+649,6165,2023-09-14,Oil - Grapeseed Oil,264,782
+650,3989,2023-08-12,"Bread - Roll, Canadian Dinner",111,451
+651,1664,2024-04-10,"Juice - Apple, 500 Ml",247,403
+652,2482,2024-05-17,Nut - Pumpkin Seeds,639,347
+653,7610,2024-05-19,Wasabi Paste,298,159
+654,3445,2023-08-28,Cornish Hen,625,710
+655,8728,2024-04-19,Pasta - Agnolotti - Butternut,390,65
+656,8632,2024-01-28,Sugar - Palm,464,982
+657,8322,2024-05-27,"Beef - Tenderlion, Center Cut",993,143
+658,4473,2023-11-28,Lid - 3oz Med Rec,100,12
+659,1038,2023-10-04,Beer - Moosehead,733,238
+660,4653,2024-06-10,Pork - Side Ribs,658,377
+661,5494,2024-03-14,Wine - Niagara Peninsula Vqa,950,88
+662,3176,2024-04-14,Daves Island Stinger,942,692
+663,8663,2023-10-28,"Cheese - Romano, Grated",437,755
+664,1568,2023-08-23,Kiwano,356,310
+665,4158,2023-09-13,Soup - Campbells Chicken,332,189
+666,2896,2023-10-02,Onion Powder,990,903
+667,8663,2023-08-09,"Wine - White, Cooking",210,522
+668,2334,2024-06-22,Hipnotiq Liquor,198,743
+669,2116,2023-07-31,Longos - Grilled Salmon With Bbq,455,982
+670,6434,2024-03-19,Bread Crumbs - Japanese Style,69,185
+671,8645,2023-08-11,Wine - Pinot Noir Mondavi Coastal,309,590
+672,6501,2024-02-10,"Stock - Veal, Brown",725,133
+673,2879,2023-09-13,Truffle Shells - Semi - Sweet,561,91
+674,1363,2024-03-05,"Star Anise, Whole",937,181
+675,9211,2023-07-04,"Beef - Tenderlion, Center Cut",739,960
+676,9936,2023-10-19,Tumeric,122,19
+677,3944,2023-12-20,Goldschalger,506,553
+678,6836,2023-10-22,Puree - Kiwi,590,44
+679,4042,2023-09-25,Banana Turning,123,615
+680,6690,2023-08-09,Lidsoupcont Rp12dn,272,658
+681,2572,2023-12-10,Taro Root,967,217
+682,7965,2024-04-05,Pepper - Cubanelle,226,720
+683,5109,2023-11-30,Pork - Backfat,529,728
+684,7080,2024-04-03,Syrup - Monin - Granny Smith,670,678
+685,4170,2024-06-18,Wine - Alicanca Vinho Verde,196,868
+686,8417,2024-06-18,Muffin Carrot - Individual,950,932
+687,4774,2023-08-22,Rice - Brown,268,945
+688,8839,2023-10-03,Bread - Dark Rye,839,316
+689,5806,2024-05-02,"Dill - Primerba, Paste",623,444
+690,2914,2024-03-23,Vinegar - Rice,627,849
+691,4584,2023-10-31,Pepper - Chili Powder,604,65
+692,2603,2024-01-12,Beets - Pickled,958,708
+693,6744,2024-05-11,Pear - Halves,824,46
+694,9357,2023-09-10,Versatainer Nc - 8288,401,12
+695,7911,2024-04-20,Chutney Sauce,927,242
+696,5261,2023-09-28,"Pork - Ham, Virginia",562,345
+697,7614,2024-03-09,Durian Fruit,599,723
+698,2951,2024-02-05,Brandy Cherry - Mcguinness,643,629
+699,6401,2023-12-17,"Jam - Marmalade, Orange",965,118
+700,4290,2024-01-20,Miso - Soy Bean Paste,669,203
+701,2225,2024-06-23,"Chestnuts - Whole,canned",934,591
+702,3021,2023-11-16,Carroway Seed,491,258
+703,6493,2023-08-27,"Pork - Bacon, Double Smoked",857,777
+704,3033,2024-04-28,Grapes - Black,783,326
+705,1483,2024-03-24,Lighter - Bbq,843,80
+706,2775,2023-12-22,Beer - Corona,176,777
+707,6702,2024-05-22,Puree - Passion Fruit,304,130
+708,2214,2024-01-29,Flour - Whole Wheat,475,586
+709,8523,2023-10-31,Cheese - Asiago,76,198
+710,5162,2023-10-17,Rye Special Old,240,731
+711,6712,2023-10-16,Cheese - Shred Cheddar / Mozza,902,801
+712,5645,2024-04-24,Nut - Pumpkin Seeds,373,973
+713,7174,2023-11-01,Cheese - Fontina,561,744
+714,4401,2024-03-08,Wine - Lamancha Do Crianza,173,607
+715,8172,2024-04-18,Coffee - Cafe Moreno,292,60
+716,4800,2023-09-23,Muffin - Banana Nut Individual,365,808
+717,9636,2024-05-30,Yukon Jack,615,647
+718,2712,2023-10-18,Pepper - Cubanelle,138,982
+719,5207,2023-11-07,Wine - Prem Select Charddonany,578,367
+720,8706,2024-04-03,Okra,916,449
+721,5436,2023-08-02,Bread - Corn Muffaletta,989,21
+722,2580,2023-12-17,Longos - Chicken Cordon Bleu,761,643
+723,9524,2023-08-01,Muffin - Bran Ind Wrpd,612,630
+724,3748,2023-10-25,Bread - Italian Roll With Herbs,865,915
+725,3705,2023-10-24,"Sauce - Gravy, Au Jus, Mix",49,622
+726,9562,2024-03-13,Sausage - Andouille,994,270
+727,9162,2023-12-04,"Pasta - Rotini, Dry",947,285
+728,8641,2023-12-10,Container - Foam Dixie 12 Oz,318,768
+729,8461,2023-06-27,Goldschalger,797,567
+730,8413,2024-02-09,Sprouts - Alfalfa,38,523
+731,2303,2024-02-14,Clams - Canned,751,256
+732,6263,2024-01-31,Chocolate - White,37,870
+733,8229,2023-07-14,Longos - Grilled Veg Sandwiches,599,155
+734,2148,2023-09-05,Creme De Cacao White,769,82
+735,5895,2024-05-08,Wine - Red Oakridge Merlot,567,92
+736,8317,2023-11-04,"Juice - Clamato, 341 Ml",428,513
+737,5464,2024-01-10,Chips - Doritos,924,93
+738,7611,2024-04-23,Pail For Lid 1537,200,477
+739,1366,2023-10-24,Cookie Chocolate Chip With,117,726
+740,2039,2023-12-05,"Asparagus - White, Fresh",934,712
+741,1437,2024-01-07,Compound - Orange,494,59
+742,4119,2023-08-05,Teriyaki Sauce,447,78
+743,3981,2024-01-23,Juice - Ocean Spray Cranberry,340,144
+744,8596,2024-03-06,"Rum - Dark, Bacardi, Black",84,598
+745,5467,2023-11-24,Sauce - Soy Low Sodium - 3.87l,835,824
+746,2071,2024-03-28,Muffin Hinge 117n,445,684
+747,9128,2024-03-29,Triple Sec - Mcguinness,689,542
+748,2217,2024-06-20,Shrimp - 150 - 250,159,15
+749,6060,2023-08-23,Langers - Ruby Red Grapfruit,445,447
+750,2862,2023-11-21,Beef - Bresaola,561,257
+751,1914,2023-06-30,"Marjoram - Dried, Rubbed",853,287
+752,5542,2024-01-04,Pasta - Cheese / Spinach Bauletti,854,66
+753,5884,2023-07-21,Table Cloth 90x90 White,717,239
+754,4444,2024-03-05,Port - 74 Brights,345,723
+755,2514,2023-08-23,Pastry - Lemon Danish - Mini,309,497
+756,9921,2023-11-14,Cheese - St. Paulin,772,982
+757,4089,2024-05-01,"Yogurt - Peach, 175 Gr",755,992
+758,7083,2023-07-09,Turkey - Oven Roast Breast,185,736
+759,7564,2024-01-30,Bread - Flat Bread,456,963
+760,7935,2023-12-17,"Beef - Rib Roast, Cap On",117,522
+761,5542,2023-08-17,Wine - Prosecco Valdobienne,160,564
+762,4729,2024-02-13,"Syrup - Monin, Swiss Choclate",92,30
+763,4203,2023-09-25,Sloe Gin - Mcguinness,624,379
+764,6264,2024-04-09,Island Oasis - Ice Cream Mix,812,607
+765,8731,2024-05-26,Flour - Strong Pizza,114,769
+766,2583,2024-01-30,"Capon - Breast, Double, Wing On",56,247
+767,4058,2024-03-17,Rye Special Old,827,324
+768,4336,2023-09-30,Heavy Duty Dust Pan,929,920
+769,4929,2023-12-02,Beer - Mill St Organic,329,470
+770,7748,2023-11-27,"Chicken - Base, Ultimate",543,66
+771,3802,2024-02-21,Muffin - Carrot Individual Wrap,607,70
+772,7061,2024-04-29,"Tabasco Sauce, 2 Oz",504,507
+773,3983,2024-02-13,Pears - Anjou,178,40
+774,4161,2023-07-31,Buffalo - Tenderloin,673,599
+775,8662,2023-07-28,Beef - Montreal Smoked Brisket,967,164
+776,3678,2024-03-09,Sobe - Tropical Energy,161,226
+777,6660,2023-11-30,Puff Pastry - Slab,563,544
+778,9043,2023-10-16,Pernod,479,870
+779,6367,2023-07-01,Irish Cream - Baileys,164,176
+780,2258,2023-12-10,"Bread - Sticks, Thin, Plain",469,234
+781,9838,2024-06-04,Wine - Saint Emilion Calvet,204,875
+782,5510,2024-05-08,Cookies - Fortune,869,10
+783,2848,2023-12-25,Mustard - Dijon,410,44
+784,1318,2024-02-01,Ice Cream Bar - Rolo Cone,114,740
+785,8579,2023-12-06,Mcgillicuddy Vanilla Schnap,977,31
+786,4609,2023-08-15,Sauce - Sesame Thai Dressing,409,73
+787,5592,2024-04-24,Pears - Anjou,909,133
+788,8786,2023-12-31,Macaroons - Two Bite Choc,108,339
+789,3041,2024-04-30,Calaloo,309,998
+790,9102,2023-11-01,"Wine - Harrow Estates, Vidal",113,90
+791,5715,2024-02-21,"Turkey - Breast, Boneless Sk On",434,721
+792,2258,2024-01-07,Rappini - Andy Boy,894,951
+793,1973,2024-04-06,Beef - Eye Of Round,451,321
+794,8637,2024-02-11,Blueberries,918,887
+795,2496,2024-06-10,Bouq All Italian - Primerba,103,720
+796,2505,2023-09-20,Soup Bowl Clear 8oz92008,690,729
+797,7657,2024-06-05,"Plate - Foam, Bread And Butter",667,883
+798,9228,2023-08-24,Tea - Herbal I Love Lemon,85,261
+799,7248,2024-02-08,Juice - Apple 284ml,908,31
+800,9049,2023-09-17,Goat - Leg,267,452
+801,7696,2023-12-19,Tamarillo,427,354
+802,9279,2024-05-23,"Tomatoes - Cherry, Yellow",994,306
+803,9664,2023-09-11,"Soup - Beef Conomme, Dry",376,720
+804,6367,2024-03-17,Puree - Strawberry,791,654
+805,5603,2024-06-23,Muffin - Mix - Bran And Maple 15l,43,869
+806,6732,2023-08-13,Sprouts - China Rose,776,541
+807,7787,2024-06-23,Sauce - Vodka Blush,65,559
+808,8662,2024-04-18,"Pork - Bacon, Sliced",853,937
+809,7713,2023-06-27,"Fish - Base, Bouillion",24,751
+810,3329,2023-11-04,"Plate - Foam, Bread And Butter",531,384
+811,5895,2024-04-09,"Cookies - Oreo, 4 Pack",511,237
+812,4769,2024-01-21,Chinese Foods - Chicken Wing,556,740
+813,3749,2023-08-11,Sauce - Hollandaise,91,443
+814,8601,2023-08-29,Peach - Halves,64,890
+815,9594,2023-09-20,Truffle Cups - Red,278,14
+816,4889,2024-02-15,V8 Splash Strawberry Kiwi,22,805
+817,6059,2024-05-10,"Bread - Sticks, Thin, Plain",386,530
+818,8609,2023-11-22,Veal - Inside,875,403
+819,1206,2024-05-27,Miso Paste White,582,892
+820,6850,2023-08-14,Sproutsmustard Cress,298,589
+821,8398,2023-11-25,Carbonated Water - Blackberry,46,707
+822,5343,2024-04-09,Langers - Mango Nectar,862,269
+823,1155,2023-09-21,Wine - Ej Gallo Sonoma,564,424
+824,4559,2024-05-18,Pastrami,507,56
+825,6727,2024-06-16,Bok Choy - Baby,65,492
+826,5160,2024-05-30,"Tuna - Canned, Flaked, Light",470,44
+827,2346,2023-10-08,Jolt Cola,106,668
+828,8327,2023-11-29,Dry Ice,167,226
+829,2127,2024-01-23,Cumin - Whole,752,249
+830,4024,2023-10-29,Smoked Tongue,349,192
+831,9154,2024-06-16,Soup - Campbells - Tomato,348,222
+832,4482,2023-07-23,Yucca,250,605
+833,9513,2023-10-14,"Red Snapper - Fresh, Whole",920,489
+834,3420,2024-04-05,Sun - Dried Tomatoes,310,135
+835,7372,2024-03-20,"Soup - Campbells, Beef Barley",151,190
+836,1701,2024-04-09,Carbonated Water - Wildberry,851,1
+837,1194,2024-01-31,Smoked Tongue,67,349
+838,6029,2024-01-17,"Wine - White, Concha Y Toro",411,741
+839,8754,2023-09-20,Fib N9 - Prague Powder,545,669
+840,3883,2024-02-04,Bay Leaf,316,285
+841,2194,2024-03-19,Cheese - Taleggio D.o.p.,289,97
+842,7106,2023-09-15,Pears - Fiorelle,960,31
+843,4100,2024-01-24,"Cherries - Maraschino,jar",999,106
+844,2225,2024-02-04,Pepper - Scotch Bonnet,926,254
+845,3032,2023-10-18,"Soup - Beef, Base Mix",870,677
+846,3048,2023-11-19,Coffee - Decaffeinato Coffee,621,915
+847,2129,2023-09-04,Tomatoes - Roma,671,529
+848,6877,2023-11-04,"Bar Mix - Pina Colada, 355 Ml",917,734
+849,4336,2024-01-14,Momiji Oroshi Chili Sauce,822,747
+850,9101,2023-12-02,Coffee - Hazelnut Cream,813,263
+851,6174,2023-12-12,"Salmon - Atlantic, Fresh, Whole",827,289
+852,4194,2024-03-31,Chocolate - Chips Compound,145,901
+853,3718,2024-04-02,"Artichokes - Knobless, White",492,5
+854,4120,2024-04-03,Pheasants - Whole,195,870
+855,6212,2024-02-28,Ham - Cooked Bayonne Tinned,745,203
+856,6220,2023-09-12,Wild Boar - Tenderloin,98,149
+857,6580,2024-04-22,Table Cloth 54x54 White,857,384
+858,3875,2024-02-02,Flower - Dish Garden,29,1
+859,9113,2023-07-15,Juice - Lime,689,64
+860,8874,2023-10-16,Longos - Grilled Chicken With,46,335
+861,4442,2024-06-04,Island Oasis - Wildberry,560,960
+862,8105,2023-12-01,Table Cloth 54x54 White,196,21
+863,5783,2024-01-31,"Nut - Pecan, Pieces",853,444
+864,8161,2024-06-17,Compound - Mocha,643,270
+865,3250,2024-03-30,Muffin - Zero Transfat,416,136
+866,2272,2024-03-31,Walkers Special Old Whiskey,380,443
+867,1643,2023-12-05,"Veal - Inside Round / Top, Lean",287,777
+868,1651,2024-03-23,Soup Campbells Mexicali Tortilla,607,137
+869,3638,2023-06-27,Soup Campbells - Italian Wedding,47,592
+870,4822,2024-04-07,Pasta - Cheese / Spinach Bauletti,697,72
+871,9489,2024-06-06,Vinegar - Champagne,898,533
+872,6950,2024-01-20,Chocolate - Dark Callets,125,857
+873,9213,2024-04-19,Cookie Double Choco,648,650
+874,6611,2023-09-17,"Wine - Red, Harrow Estates, Cab",927,353
+875,1796,2024-04-29,"Placemat - Scallop, White",593,808
+876,2652,2023-11-21,Soup - Campbells,465,9
+877,6435,2023-08-08,Chicken - Whole Roasting,551,615
+878,3428,2024-04-27,Momiji Oroshi Chili Sauce,166,308
+879,5195,2024-03-05,Gatorade - Fruit Punch,598,204
+880,9386,2024-01-30,Tray - 12in Rnd Blk,215,490
+881,6981,2024-01-09,Chocolate - White,507,30
+882,6334,2023-07-24,Munchies Honey Sweet Trail Mix,30,427
+883,2931,2023-10-10,Campari,812,14
+884,7824,2023-12-15,Beer - Rickards Red,114,858
+885,2267,2023-12-01,"Lentils - Red, Dry",809,349
+886,3422,2024-05-27,"Chicken - White Meat, No Tender",765,946
+887,7014,2023-08-17,Bread Ww Cluster,898,286
+888,3135,2023-10-05,"Beef - Bones, Marrow",624,36
+889,8326,2023-09-07,"Veal - Round, Eye Of",494,257
+890,4759,2024-03-03,"Chicken - Leg, Boneless",457,357
+891,9785,2023-12-03,Tray - 12in Rnd Blk,451,243
+892,9609,2023-10-28,"Coffee - Beans, Whole",591,221
+893,2964,2023-11-19,Longos - Lasagna Beef,751,812
+894,2315,2023-09-25,"Coke - Diet, 355 Ml",888,118
+895,1463,2024-01-01,"Asparagus - Green, Fresh",959,104
+896,3016,2024-03-10,Cookie Dough - Double,534,741
+897,2396,2023-08-18,Wine - Cave Springs Dry Riesling,461,858
+898,9955,2023-12-31,Godiva White Chocolate,426,55
+899,8929,2023-09-18,Table Cloth 62x114 White,702,533
+900,8482,2024-05-08,Pastry - Baked Cinnamon Stick,965,669
+901,4153,2023-10-07,"Wine - Red, Mouton Cadet",120,534
+902,9126,2023-07-30,Flour - Chickpea,615,539
+903,2089,2023-08-29,Vodka - Moskovskaya,109,981
+904,2754,2024-01-26,Skirt - 29 Foot,673,335
+905,8532,2023-09-01,Puree - Raspberry,200,234
+906,5161,2024-02-08,Dc - Frozen Momji,569,764
+907,9150,2024-03-07,"Soup - Clam Chowder, Dry Mix",341,782
+908,6603,2023-12-11,Appetizer - Asian Shrimp Roll,273,290
+909,6082,2023-08-20,Flour - Semolina,468,741
+910,5740,2024-06-02,Daikon Radish,992,608
+911,2607,2023-08-04,"Juice - Grapefruit, 341 Ml",344,905
+912,6544,2024-05-13,Steel Wool,910,859
+913,2060,2024-05-03,Extract - Rum,302,344
+914,5952,2023-10-16,"Chicken - Breast, 5 - 7 Oz",688,854
+915,8889,2024-01-20,Dried Cranberries,150,256
+916,2379,2024-04-19,Bar - Sweet And Salty Chocolate,687,432
+917,3526,2023-08-23,Table Cloth 62x120 White,925,578
+918,9474,2023-11-07,Arrowroot,917,948
+919,5061,2023-12-22,Raisin - Golden,392,706
+920,5446,2023-07-18,"Beef - Ox Tail, Frozen",268,99
+921,6393,2024-03-04,Cheese - Pont Couvert,970,955
+922,5447,2023-10-18,Eggplant - Regular,497,281
+923,2475,2024-03-21,"Nestea - Ice Tea, Diet",266,561
+924,4521,2024-05-03,Pork - Suckling Pig,345,2
+925,2574,2024-05-31,Shrimp - Black Tiger 8 - 12,215,933
+926,1504,2024-06-14,"Beets - Candy Cane, Organic",50,230
+927,8877,2023-10-26,Wine - Winzer Krems Gruner,828,310
+928,2491,2024-01-06,"Jam - Blackberry, 20 Ml Jar",242,239
+929,8518,2024-05-17,"Pork - Back, Long Cut, Boneless",288,426
+930,2905,2023-08-22,Rice Paper,624,540
+931,9524,2023-10-06,Eggplant - Asian,224,735
+932,1010,2024-02-18,"Soup - Campbells, Classic Chix",170,524
+933,3265,2023-09-24,"Beef - Baby, Liver",398,960
+934,8660,2023-09-12,Tray - 16in Rnd Blk,373,49
+935,1111,2023-10-22,Pork Ham Prager,819,119
+936,9041,2023-12-04,Apron,895,989
+937,3403,2023-07-06,Plastic Wrap,513,272
+938,8590,2023-10-04,"Pail - 15l White, With Handle",127,700
+939,4920,2024-02-05,Jam - Apricot,224,789
+940,5491,2023-08-29,Chips - Miss Vickies,250,521
+941,8204,2024-06-17,Cinnamon - Stick,114,357
+942,3421,2023-07-18,Sea Bass - Fillets,531,826
+943,5035,2023-12-06,Appetizer - Escargot Puff,673,942
+944,4405,2024-04-19,Cognac - Courvaisier,44,340
+945,6501,2023-09-04,"Lobster - Tail, 3 - 4 Oz",568,854
+946,3715,2024-03-30,Bread - Kimel Stick Poly,936,585
+947,5013,2024-02-27,Soup Bowl Clear 8oz92008,181,639
+948,1376,2024-03-20,Lamb Tenderloin Nz Fr,802,751
+949,7413,2024-05-28,Muffin Batt - Carrot Spice,38,198
+950,2140,2023-09-15,Danishes - Mini Raspberry,910,285
+951,7282,2023-08-03,French Pastry - Mini Chocolate,84,633
+952,1753,2024-06-15,Sage - Rubbed,147,146
+953,3117,2023-07-29,Dc - Frozen Momji,835,677
+954,9622,2024-01-10,Cookie Choc,648,281
+955,3380,2023-09-25,Bouq All Italian - Primerba,422,471
+956,5460,2023-11-21,Rice - Long Grain,628,384
+957,3251,2024-05-01,Sugar - Splenda Sweetener,169,36
+958,3324,2024-03-07,Beer - Mcauslan Apricot,797,628
+959,2896,2023-07-12,"Gingerale - Schweppes, 355 Ml",806,45
+960,5868,2023-11-28,Table Cloth 54x72 Colour,346,118
+961,6918,2024-05-06,Cheese - Cheddar With Claret,220,812
+962,4158,2023-06-29,Potatoes - Fingerling 4 Oz,659,962
+963,4235,2024-03-16,"Wine - White, Lindemans Bin 95",410,270
+964,4555,2023-10-18,Trueblue - Blueberry 12x473ml,63,555
+965,9835,2023-09-01,Beef - Inside Round,14,780
+966,7415,2023-08-03,Wine - Toasted Head,1000,362
+967,2997,2023-07-15,Lamb Shoulder Boneless Nz,805,607
+968,6126,2023-09-14,Fennel,786,356
+969,4015,2023-07-22,Table Cloth 62x120 Colour,268,886
+970,3506,2023-12-03,"Chicken - White Meat, No Tender",478,928
+971,6613,2023-11-19,Cabbage Roll,187,896
+972,2158,2024-04-02,Cheese Cloth No 60,819,707
+973,2692,2023-10-13,"Wine - Red, Gallo, Merlot",473,670
+974,2889,2023-07-12,Sauce - Hollandaise,94,175
+975,7820,2023-11-12,Pie Shell - 9,696,743
+976,8590,2024-02-08,Temperature Recording Station,801,634
+977,7943,2024-01-25,Wine - Magnotta - Pinot Gris Sr,236,315
+978,4312,2024-05-07,"Beans - Black Bean, Dry",325,170
+979,4730,2023-08-16,Pail With Metal Handle 16l White,633,615
+980,4537,2023-11-14,Tomatoes - Orange,362,159
+981,7903,2024-01-29,Onions - Pearl,893,135
+982,9938,2024-03-10,Irish Cream - Butterscotch,213,673
+983,8820,2024-02-05,Pepper - Gypsy Pepper,206,872
+984,2599,2024-01-28,Cheese - Asiago,796,533
+985,2469,2023-10-13,Cookies - Amaretto,407,534
+986,9924,2023-09-24,Teriyaki Sauce,59,767
+987,9021,2023-10-22,"Wine - Red, Cabernet Sauvignon",457,273
+988,5523,2023-07-22,"Wine - Red, Cooking",654,491
+989,4399,2023-11-11,Pepper - Yellow Bell,196,331
+990,7510,2023-08-12,Bread Crumbs - Panko,22,316
+991,4315,2023-11-02,"Tortillas - Flour, 12",920,228
+992,8674,2024-06-20,Carrots - Mini Red Organic,410,205
+993,9959,2023-08-24,Eggplant Italian,346,715
+994,4169,2023-11-27,Fuji Apples,763,360
+995,9201,2024-06-19,"Lemonade - Natural, 591 Ml",966,84
+996,1544,2023-08-03,Pastry - Carrot Muffin - Mini,962,225
+997,2547,2023-09-20,Wakami Seaweed,633,416
+998,3677,2023-12-11,Sloe Gin - Mcguinness,897,200
+999,3027,2023-08-28,"Soup - Knorr, French Onion",339,593
+1000,4147,2024-04-08,Butter - Unsalted,329,379
